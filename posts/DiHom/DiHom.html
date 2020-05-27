@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Directed Homology</title>
+
+   <!-- Bootstrap Core CSS -->
+   <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Theme CSS -->
+   <link href="/css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li> <a href="/index.html">math and philosophy blog</a> </li>
+                    <li> <a href="/e&p.html">Engineering and Programming Projects</a> </li>
+                    <li> <a href="/about.html">About </a> </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('bigCube.png')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Directed Homology</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">Posted on May 24, 2020</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p> This past summer I had the amazing opportunity to attend the OSU REU and work on a really interesting project in the field of directed algebraic topology. <a href="../documents/Directed Homology.pdf" >Here</a> is the paper that I had been working on over the summer.</p>
+
+                    <p> It is very much a draft. The paper does not contain a lot of results or finished proofs (lol). The beginning of the REU involved me learning as much as I could about topics I never had studied before: algebra and algebraic topology. It was challenging, but also really fun to dive into a new area of math and then later start working on some concrete questions.</p>
+                        
+                    <p> I also have some code I wrote that computes the homology of a directed graph (took me forever to program). I’ll post this up as well.
+                        
+                        <a href="canvas.png" >Here</a> is the poster I presented at the Young Mathematicians Conference 2019 at OSU alongside my research partner.</p>
+
+                    <h2 class="section-heading">Directed Algebraic Topology</h2>
+
+                    <p>Usually when we think of topological spaces, we don't think about them with a notion of direction. Directed topological spaces, or <i>directed spaces</i>, are spaces that do have a notion of direction--intuitively understand as the flow of time. Common examples of such spaces are spacetimes and directed graphs. The same way algebraic topology tries to find algebraic invariants that classify topological spaces up to homotopy equivalence, directed algebraic topology tries to find algebraic invariants that classify directed spaces up to directed analogues of homotopy equivalence. There are competing ways on how to formalize the idea of a directed space, see the <a href="https://en.wikipedia.org/wiki/Directed_algebraic_topology">Wiki entry</a> on directed algebraic topology for some examples. Studying irreversible paths on topological spaces has applications in modeling irreversible phenomena, most notably in concurrent programming. </p>
+                    
+                    <h2 class="section-heading">Directed Homology</h2>
+
+                    <p>There are competing ideas regarding how homology should be defined in the directed setting. Under the guidance of Dr. Sanjeevi Krishnan and alongside a peer research partner, I worked on a theory of directed homology proposed by Dr. Krishnan. My project investigated Dr. Krishnan’s proposed definition. I won't get technical here. For the definition and more details, see my writeup above. Whenever I refer to 'homology' from here on out I am assuming Dr. Krishnan's definition. The <i>nth homology</i> can be interpreted as counting the number of directed n-dimensional holes in a directed space. So for a directed graph, first homology can be seen as counting the number of 1-dimensional holes i.e. directed cycles in the graph theory sense.  For example, in the graph below,  </p>
+
+                    <a href="#">
+                        <img class="img-responsive" src="dGraph.png" style="width:1000px;height:500px;">
+                    </a>
+                    
+                    <p>the first homology is 6 (more precisely, it is a monoid generated by 6 elements):
+                        <ul>
+                            <li> Cycle 1 = (4,3,6,4) </li>
+                            <li> Cycle 2 = (4,3,6,7,4) </li>
+                            <li> Cycle 3 = (2,1,4,2) </li>
+                            <li> Cycle 4 = (2,1,4,5,2) </li>
+                            <li> Cycle 5 = (0,1,4,3,0) </li>
+                            <li> Cycle 6 = (7,4,5,8,7) </li>
+                        </ul>
+
+                    </p>
+
+                    <h2 class="section-heading">Research Conferences</h2>
+                    <p>I had the opportunity to present my research twice: at the 2019 Notre Dame Geometry and Topology Workshop and the 2019 Young Mathematicians Conference.</p>
+
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+
+    <!-- Theme JavaScript -->
+    <script src="/js/clean-blog.min.js"></script>
+
+</body>
+
+</html>

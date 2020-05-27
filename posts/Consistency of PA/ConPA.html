@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Consistency of Peano Arithmetic</title>
+
+   <!-- Bootstrap Core CSS -->
+   <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Theme CSS -->
+   <link href="/css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- LaTex Rendering with MathJax-->
+   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li> <a href="/index.html">math and philosophy blog</a> </li>
+                    <li> <a href="/e&p.html">Engineering and Programming Projects</a> </li>
+                    <li> <a href="/about.html">About </a> </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('/img/turnstiles.png')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Consistency of Peano Arithmetic</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">Posted on March 31, 2019</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p>I first learned about Gödel’s Incompleteness Theorems about 2 years ago in a talk given by Vladimir Voevodsky at the IAS called <a href="https://www.youtube.com/watch?v=O45LaFsaqMA">"What if Current Foundations of Mathematics are Inconsistent?"</a>. I have finally gained enough knowledge to roughly understand a proof for a formulation of the theorems as given in Enderton’s book, A Mathematical Introduction to Logic. While studying, I was making sure I understood exactly what the difference between the Completeness and Incompleteness Theorems are so I started to study their interaction and came across a startling realization.</p>
+
+                    <p>I’ll state the Completeness, Soundness, and Incompleteness Theorems (a variation of them) as I understand them. Henceforth, \( \Sigma \) is a set of sentences, and \( \sigma \) is a sentence in the given language. \( \mathbb{N}=(\mathbb{N};0,S,+,\cdot)\)  </p>
+                        
+                    <p> <b>Soundness Theorem</b> For any countable first-order language  \( \mathcal{L} \),
+                        \[ \mathbf{If}\  \Sigma\vdash\sigma, \mathbf{then}\ \Sigma\models\sigma \] </p>
+                        
+                    <p> <b>Completeness Theorem</b> For any countable first-order language \( \mathcal{L} \),
+                        \[ \mathbf{If}\ \Sigma\models\sigma,\ \mathbf{then}\ \Sigma\vdash\sigma \] </p>
+                        
+                    <p> <b>Incompleteness Theorem I</b> If \( A\subseteq Th(\mathbb{N}) \) and \( \#A \) (set of Göldel numbers) is recursive, then \(Cn(A)\) is not a complete theory &mdash; complete in the sense that for every \(\sigma\), \(\Gamma\models\sigma\) or \(\Gamma\models\neg\sigma\).</p>
+                        
+                    <p> <b> Incompleteness Theorem II </b> Assume that <i>T</i> is a sufficiently strong recursively axiomatizable theory, then \( T\vdash Con(T) \) iff <i>T</i> is inconsistent. </p>
+                    
+                    <p> I'll take PA as the set of axioms. All of the following statements are true. </p>
+
+                    <ol>
+                        <li>The first Incompleteness Theorem states that there is a sentence \(\sigma\) in the language \(\mathcal{L}_{\mathbb{N}}\) such that \(PA\nvdash\sigma\) and \(PA\nvdash\neg\sigma\).</li> <br>
+
+                        <li>From the second Incompleteness Theorem we know that if PA is consistent, then \(PA\nvdash Con(PA)\) and \(PA\nvdash\neg Con(PA)\). </li> <br>
+
+                        <li>From the Completeness and Soundness Theorems, we know that \(PA\vdash Con(PA)\) iff \(PA\models Con(PA)\). Since \(PA\nvdash Con(PA)\) then \(PA\nvDash Con(PA)\).\(PA\nvDash Con(PA)\) means that there are models \(\mathfrak{A},\mathfrak{B}\) of PA such that \(\models_{\mathfrak{A}}Con(PA)\) and \(\nvDash_{\mathfrak{B}}Con(PA)\).</li><br>
+                    </ol>
+                    
+                    <p>The statement that \(\nvDash_{\mathfrak{B}}Con(PA)\) is what is troubling me. If \(\nvDash_{\mathfrak{B}}Con(PA)\) then \(\models_{\mathfrak{B}}\neg Con(PA)\). But if \(\mathfrak{B}\) is a model of PA how could it think PA is inconsistent? This seems contradictory from a meta-perspective. It seems to be saying that \(\mathfrak{B}\) thinks everything in PA is true, but it’s inconsistent which seems to imply something about the model, like the model is inconsistent somehow. But models are definitionally consistent, they are a consistent assignment of truth values to all possible sentences in the language.</p>
+                    
+                    <p>I looked this up and found a <a href="https://math.stackexchange.com/questions/734872/interaction-of-completeness-and-second-incompleteness-theorems" target="_blank">StackExchange</a> post asking a similar questions and someone gave an answer that was really startling. There is a non-standard “proof” of an inconsistency. The reply-er does not grant existence to the proof because it is infinite and has non-standard formulas. This isn’t a completely satisfying answer for me. One thing to note is that by the Compactness Theorem we can get the proof to be of finite length. So it seems the only grounds one has to deny this construction legitimate proof status is that is utilizes non-standard formulas. Now, I have no idea what a non-standard formula is, and I haven’t been able to find a satisfying answer. They are necessarily a formula in the language, the only non-standard aspect I can imagine they have is infinite length. At least for me, it is not conceivable how one would go about investigating such non-standard proofs and formulas although I think it would be an interesting task. I would like to be convinced that we need not worry about these non-standard proofs of contradictions.</p>
+                    
+                    <p>A day after I came across this, a paper was sent on the Foundations of Mathematics mailing list about work done on the consistency of PA. Sergei Artemov put up a pre-print on arXiv titled <a href="https://arxiv.org/abs/1902.07404">The Provability of Consistency</a>. Sergei offers a different view on how we should think about proofs of consistency. He argues that the sentence \(Con(PA)\equiv \forall x\neg Pr_{PA}(\#x,\bot)\) where \(\#x\) denotes the proof encoded by x, does not capture what we mean by consistency. The issue with this sentence is that the universal quantifier ranges over non-standard proofs, some of which prove contradictions. This is what I came across in my studies, and the existence of such proof is what I showed earlier. This is very exciting work. I think I have a rough understanding of the details of the proof, but am far from being able to judge the quality of the paper. I mostly agree with Artemov that Con(PA) does not truly capture what we mean by consistency and that we may have to change our views on how we prove consistency. The fact that there are models of PA that think PA is inconsistent clearly shows that Con(PA) is not an accurate formulation of consistency. What we are really mean when we talk about a set of axioms being consistent is that there does not exist a finite string of formulas that only contains the axioms, validities, and formulas derived from the axioms using inference rules that ends in a contradiction. It will be very exciting to see what develops after this paper. It is too early, especially for me, to tell how this paper will be received. I might make a post at some later time on how the mathematics community feels about the paper. There are currently exchanges going on in the mailing list between mathematicians which I am now going to catch-up on. </p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+
+    <!-- Theme JavaScript -->
+    <script src="/js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
