@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Directed Homology of a Directed Graph</title>
+
+   <!-- Bootstrap Core CSS -->
+   <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Theme CSS -->
+   <link href="/css/clean-blog.min.css" rel="stylesheet">
+
+   <!-- LaTex Rendering with MathJax-->
+   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li> <a href="/index.html">math and philosophy blog</a> </li>
+                    <li> <a href="/e&p.html">Programming and Engineering Projects</a> </li>
+                    <li> <a href="/about.html">About </a> </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('/img/bw.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Directed Homology of a Directed Graph</h1>
+                        <h2 class="subheading">Automated homology calculations with Python</h2>
+                        <span class="meta">Posted on July 14, 2020</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p>Simply, we can take the directed homology of a directed graph to be the number of directed cycles of the graph. This nicely reduces to finding a non-negative solution to a system of linear equations. For a more detailed explanation of directed homology, see my other <a href=/posts/DiHom/DiHom.html>post</a>.</p>
+
+                   <figure>
+                      <figcaption>The following is the an outline of the algorithm I wrote for calculating the directed homology.</figcaption>
+                      <pre>
+                        <code>
+<b>Input:</b> Directed Graphs represented by two ordered lists: one ordered list for the nodes and the other order list for the directed edges as ordered pairs of nodes
+<b>Output:</b> Directed cycles in the form of tuples of nodes<br>
+<b>Algorithm</b>
+<ol>
+    <li>Create two matrices from the graph data: one representing the source node for every     directed edge and the other representing the target node for every directed edge</li>
+    <li>Subtract the two matrices</li>
+    <li>Solve the resulting homogenous system of equations for non-negative solutions with      linear programming methods</li>
+    <li>Print out the basis to the solutions</li>
+</ol>
+                        </code>
+                      </pre>
+                    </figure>
+
+                    <h2 class="section-heading">Issues with Current Implementation</h2>
+                    <p>
+                        There is not a unique form to the basis of the solutions to the system. Under one kind of form, the basis represents the directed cycles and under another form it does not. My current implementation will produce the desired basis most of the time, but I used a dirty hack. I did not find a good solution to this issue by the end of the research program. The current implementation is on my GitHub
+                    </p>
+                    
+                    <p>
+                        If I were to continue working on this, I would try to implement a different algorithm than the linear programming methods I was using. It turns out that the solution space to the systems that appear in this context are convex cones, and the generating vectors represent the directed cycles. There are some algorithms to find the generating vectors of a convex cone. I would look to implement those.
+                    </p>
+
+                    <a href="https://en.wikipedia.org/wiki/Convex_cone#/media/File:Polyhedral-cone.png" target="_blank" alt="https://en.wikipedia.org/wiki/Convex_cone#/media/File:Polyhedral-cone.png">
+                        <img class="img-responsive" src="../DiHomCalc/cone.png" style="width:1000px;height:250px;">
+                    </a>
+                    
+                    <h2 class="section-heading">Example Output</h2>
+
+                    <p> This is the output of the current implementation when given the data for the graph below.  </p>
+
+                    <p>
+                        <ul>
+                            <li> Cycle 1 = (4,3,6,4) </li>
+                            <li> Cycle 2 = (4,3,6,7,4) </li>
+                            <li> Cycle 3 = (2,1,4,2) </li>
+                            <li> Cycle 4 = (2,1,4,5,2) </li>
+                            <li> Cycle 5 = (0,1,4,3,0) </li>
+                            <li> Cycle 6 = (7,4,5,8,7) </li>
+                        </ul>
+
+                    </p>
+                    
+                    <a href="#">
+                        <img class="img-responsive" src="../DiHom/dGraph.png" style="width:1000px;height:500px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+
+    <!-- Theme JavaScript -->
+    <script src="/js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
