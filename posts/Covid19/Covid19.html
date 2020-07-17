@@ -61,34 +61,143 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p>Early in the pandemic, I wanted to perform on a regression on the number of cases in the U.S. to see what function would best fit the data. Now I am aware that the growth of the number of cases for a virus outbreak grows is usually exponential, but due to the lack of testing and reporting, the cases seemed to have a polynomial growth&mdash;something like a 5th degree polynomial. </p>
+                    <p>Early in the pandemic, I wanted to perform a regression on the number of cases in the U.S. to see what function would best fit the data. I am aware that the growth of infection cases is usually exponential, but due to the lack of testing and reporting, the number of cases seemed to have a polynomial growth&mdash;something like a 5th degree polynomial. </p>
 
                     <h2 class="section-heading">Webscraping the Covid-19 Data</h2>
 
-                    <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+                    <p>
+                        I wrote a short python script that creates a database with SQLite, downloads the data on infection cases in the U.S. from the CDC's website, and then  
+                    </p>
 
-                    <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+                    <figure>
+                        <figcaption></figcaption>
+                        <pre>
+                          <code>
+# ///////////////////////// Webscraping the Covid-19 Data /////////////////////////////////
+import requests
+import urllib.request
+import time
+from bs4 import BeautifulSoup
+import json
 
-                    <blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+# Set the URL you want to webscrape from
+url = 'https://www.cdc.gov/coronavirus/2019-ncov/json/new-cases-chart-data.json'
+print("url =", url,'\n')
 
-                    <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+# Connect to the URL
+response = requests.get(url)
+
+# Parse HTML and save to BeautifulSoup object
+soup = BeautifulSoup(response.text, "html.parser")
+
+# Decode the JSON file into a list of lists
+data=json.loads(str(soup))
+                          </code>
+                        </pre>
+                      </figure>
+
+                    <p>
+                        I originally tried to download the data by searching the Beautiful Soup object, but then realized that the data is being loaded in an iframe so there were no HTML table tags in the Beautiful Soup object. The fast solution I saw was just to take it straight from the JSON file.
+                    </p>
 
                     <h2 class="section-heading">Creating the Database</h2>
 
-                    <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+                    <p> 
+                        For performing the regression, creating the database with SQLite is more work than required. I could have skipped this entire step as the infection cases are already in <b>data</b>, but I wanted to learn a bit of SQL so I took the extra unnecessary step. 
+                    </p>
 
-                    <a href="#">
-                        <img class="img-responsive" src="img/post-sample-image.jpg" alt="">
+                    <p> 
+                        I choose March 16 as the starting date because that was the first date that started a 3-day growth. Before that cases where very small and were fluctuating a lot. This seems to be where things really took off. I chose 10 days of data because I like the number 10. 
+                    </p>
+
+                    <figure>
+                        <figcaption></figcaption>
+                        <pre>
+                          <code>
+# /////////////////////// Creating the Covid-19 database with SQLite ///////////////////////
+import sqlite3 as sql
+
+# Create a database and open a connection to it
+connection = sql.connect('CovidCaseData.db')
+terminal = connection.cursor()
+
+# Create a table within database for infection cases
+terminal.execute("""CREATE TABLE infectionCases (
+        
+    date text,
+    cases integer
+    
+    )""")
+
+# Insert all of the cases into the table from March 16, 2020 to March 25, 2020
+for i in range(54,65):
+    terminal.execute("INSERT INTO infectionCases VALUES (:date,:cases)", {'date':data[0][i], 'cases':data[1][i]} )
+                          </code>
+                        </pre>
+                      </figure>
+
+                    <h2 class="section-heading">Performing the Polynomial Regression in Python</h2>
+
+                    <p>
+                        I performed the regression on the first 60 days of infection case data in the U.S. to find the 5th degree polynomial that minimzes the squared error. 
+                    </p>
+                      
+                    <p>
+                        This is the polynomial plotted alongside the first 100 days of infection case data in the U.S. 
+                    </p>
+
+                    <a href="">
+                        <img class="img-responsive" src="Figure_1.png" style="width:1000px;height:250px;">
                     </a>
-                    <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
 
-                    <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
+                </br> </br>
 
-                    <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
+                    <figure>
+                        <figcaption></figcaption>
+                        <pre>
+                          <code>
+# ////////////////// Performing the regression ////////////////////////////////////////////
+import numpy as np
+import scipy as sp
+import matplotlib.pyplot as plt
 
-                    <p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+# Create numpy arrays 
+x = np.array( list( range(60) ) )
+y = np.array( list( range(60) ) )
 
-                    <h2 class="section-heading">Performing the Regression in Python</h2>
+# Fill in the range array with infection case numbers for the first 60 days from database
+terminal.execute("SELECT cases FROM infectionCases")
+casesCol = terminal.fetchall()
+
+for i in range(60):
+    y[i]=casesCol[i][0]
+
+# Create an array with the case numbers for the first 100 days
+X = np.array( list( range(100) ) )
+Y = np.array( list( range(100) ) )
+for i in range(99):
+    Y[i]=casesCol[i][0]
+
+# Perform a least-squares 5th degree polynomial fit on the case numbers for the first 60 days
+poly = np.polyfit(x,y,5)
+
+# Plot the first 100 days of the pandemic and the polynomial regression line
+xp = np.linspace(0,100,100)
+plt.plot(X,Y,'.')
+plt.axvline(x=60,linewidth=1, color='k')
+plt.plot(xp,np.polyval(poly,xp),'k-')
+plt.ylim(0,35000)
+plt.show()
+                          </code>
+                        </pre>
+                      </figure>
+
+
+                    <h2 class="section-heading">Conclusion</h2>
+
+                    <p>
+                        The number of reported cases in the U.S. seemed to have a polynomial growth. 
+                    </p>
 
                 </div>
             </div>
@@ -97,41 +206,7 @@
 
     <hr>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
