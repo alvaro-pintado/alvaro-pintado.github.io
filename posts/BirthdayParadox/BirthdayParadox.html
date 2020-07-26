@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>The Birthday Paradox</title>
+
+   <!-- Bootstrap Core CSS -->
+   <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Theme CSS -->
+   <link href="/css/clean-blog.min.css" rel="stylesheet">
+
+   <!-- LaTex Rendering with MathJax-->
+   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li> <a href="/index.html">math and philosophy blog</a> </li>
+                    <li> <a href="/e&p.html">Programming and Engineering Projects</a> </li>
+                    <li> <a href="/about.html">About </a> </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('/img/black.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>The Birthday Paradox</h1>
+                        <h2 class="subheading">Excel</h2>
+                        <span class="meta">Posted on July 24, 2014</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p>The Birthday Paradox is the counterintuitive answer to the following question.  </p>
+
+                    <blockquote>What is the probability \( P(N) \) that in a random group of n people, at least two people share the same birthday?</blockquote>
+
+                    <h2 class="section-heading">Calculating \( P(N) \)</h2>
+
+                    <p>Calculating \( P(N) \) directly is a messy combinatorics problem. It is much simpler to calculate the probability of no one sharing a birthday \( P(\bar{N}) \) and since this event is complementary to N, then \( P(N) = 1-P(\bar{N}) \). </p>
+
+                    For an example, take \( n=4 \). You randomly select the first person \( P_1 \) and they have some fixed birthday. Now what is the probability that the second person \( P_2 \) has a different birthday? Since there are 364 birthdays that would make them have a different birthday, then the probability is \( \frac{364}{365} \). Similarly, the probability that \( P_3 \) has a different birthday from \( P_1 \) and \( P_2 \)  is \( \frac{363}{365} \). Lastly, the probability that \( P_4 \) has a different birthday from \( P_1,P_2,\text{ and } P_3\) is \( \frac{362}{365} \). This means that 
+
+                    \[ P(4) = 1 - \frac{364}{365}\frac{363}{365}\frac{362}{365} = 0.016355... \]
+
+                    <p>For the general case of \(n\), we would keep have the product</p>
+
+                    \[ \frac{364}{365}\frac{363}{365}...\frac{365-(n-1)}{365} \]
+
+                    <p>As a formula we get</p>
+
+                    \[ P(\bar{N})=\frac{364!}{(365-n)!365^{n-1}}  \]
+
+                    <p>But G.H. Hardy once said </p>
+
+                    <blockquote>Beauty is the first test: there is no permanent place in the world for ugly mathematics.</blockquote>
+
+                    <p> and so we multiply the numerator and denomintaor by 365 to yield the more elegant equivalent formula </p>
+
+                    \[ P(\bar{N})=\frac{365!}{(365-n)!365^{n}}    \]
+
+                    <p>This means that </p>
+
+                    \[ P(N) = 1 -\frac{365!}{(365-n)!365^{n}}    \]
+
+                    <h2 class="section-heading">Using Excel to Calculate and Graph the Probabilities</h2>
+
+                    <p>Unfortunately, Excel can't perform large computations like 365! so we have to calculate these probabilities in steps. </p>
+
+                    <p>My solution was to precompute \( \frac{365-n}{365} \) for every \(n\). Computing \( P(\bar{N}) \) will just be multiplying the first \(n-1\) of these. As an equation, this is </p>
+
+                    \[ P(n) = 1 - \prod_{i=1}^{n-1}\frac{365-i}{365}  \]
+                    
+                    <p>Even though the other formula was more elegant, sometimes we have to make adjustments for the sake of automating calculations. This expression is instructional and thus lends itself to being easily programmed.</p>
+
+                    <img class="img-responsive" src="Excel.png" style="width:1000px;height:500px";>
+
+                    <p> Except for the first cell, every cell in column C has the formula  </p>
+
+                    \[ = \frac{(365-AN)}{365} \]
+
+                    <p> where N is the row number of the cell.  </p>
+
+                    <p> Every cell in column B has the formula </p>
+
+                    \[ = 1 - PRODUCT(INDIRECT("C1:C"\&AN)) \]
+                    
+                    <p> where N is the row number of the cell. The INDIRECT function allows me to effectively have a variable for the end of the cell range. </p>
+
+                    <h2 class="section-heading">Plotting the Probabilities</h2>
+
+                    <p> The graph will show why this probability distribution is considered paradoxical. For \( n=23\), the probability that at least two people share a birthday is 50.73%. Once you get to \(n=57\), there is a 99.01% chance at least two people share a birthday. </p>
+
+                    <img class="img-responsive" src="graph.png" style="width:1000px;height:500px";>
+
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+
+    <!-- Theme JavaScript -->
+    <script src="/js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
