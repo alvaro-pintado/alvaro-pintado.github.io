@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sample Post</title>
+    <title>IoT</title>
 
    <!-- Bootstrap Core CSS -->
    <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -47,9 +47,15 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Man must explore, and this is exploration at its greatest</h1>
-                        <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
-                        <span class="meta">Posted on August 24, 2014</span>
+                        <h1>Internet of Battle Things</h1>
+                        <h2 class="subheading">A Game-theoretic Approach to the Support Problem</h2>
+                        <span class="meta">Posted on September 05, 2020 </span>
+                        <span class="meta">Last updated on 
+                            <script>
+                                 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                                 d = new Date();
+                                document.write( months[d.getMonth()]," ", d.getDate(),", ", d.getFullYear() ); 
+                            </script> 
                     </div>
                 </div>
             </div>
@@ -61,40 +67,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+                    <p>This was basic research I did while still an electrical engineering and computer science major at UNLV. This was funded research I did under the Electrical and Computer Engineering department at UNLV. </p>
+                   
+                    <h2 class="section-heading">Internet of Battle Things</h2>
 
-                    <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+                    <p>Simply put, Internet of Battle Things is the concept of Internet of Things applied to a military setting. Often the term 'network-centric warfare' is used as well. It is the future of warfare.</p>
+                    
+                    <p>Even though network-centric warfare is not a reality yet, research is being done to begin thinking about how IoT can be leveraged by the military.</p>
 
-                    <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+                    <p> <a href=""><i>Leveraging the Internet of Things for a More Efficient and Effective Military</i></a> is a great publication that proposes ways in which the military can leverage IoT.  </p>
 
-                    <p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+                    <h2 class="section-heading">Research Summary</h2>
 
-                    <p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+                    <p> My research was specifically in the problem of supply support. The supply support problem is the problem of allocating resources to different units in a battlefield setting.</p>
 
-                    <h2 class="section-heading">The Final Frontier</h2>
+                    <p> My solution was to partition the battlefield into regions with something like a k-means clustering algorithm. This was to be done by a central authority unit. In every region, there are a number of supply requests by units in the battlefield. The support requests were represented with an ordered-tuple quanitifying how much of various types of resources the unit needed. </p>  
+                    
+                    <p> The supply vehicles would engage in a coalition game, that is, they would try and form coalitions to maximize the fullfillment of support requests in the different regions of the battlefield. Each supply vehicle calculated the potential payoff it could receive if it chose to supply a given region. The payoff function was essentially a measure of how well the fit was between a supply vehicle and a supply request. Having each vehicle calculate its own payoff per region allows for the benefits of distributed computing.  </p>
 
-                    <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+                    <h2 class="section-heading">Publication</h2>
 
-                    <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+                    <iframe src="A Game-theoretic Approach to Device and Resource Discovery in Internet of Battle Things .pdf" width="100%" height="500px"></iframe>
 
-                    <blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+                    <h2 class="section-heading">Side Note</h2>
 
-                    <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+                    <p>Due to personal matters at the time, I was not able to finish the research. I had developed algorithms and utility functions, but was unable to perform expriments. Another student was able to pickup where I left off and run some simulations. You can find my name in the Acknolwedgements Section. </p>
 
-                    <h2 class="section-heading">Reaching for the Stars</h2>
-
-                    <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
-
-                    <a href="#">
-                        <img class="img-responsive" src="img/post-sample-image.jpg" alt="">
-                    </a>
-                    <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-
-                    <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-                    <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-
-                    <p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
                 </div>
             </div>
         </div>
