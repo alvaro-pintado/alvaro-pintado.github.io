@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>H_1</title>
+
+   <!-- Bootstrap Core CSS -->
+   <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Theme CSS -->
+   <link href="/css/clean-blog.min.css" rel="stylesheet">
+
+   <link href = 'style.css' rel = 'stylesheet'>
+
+   <!-- LaTex Rendering with MathJax-->
+   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+   <!-- Web App code --> 
+   <script src='script.js' defer > </script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li> <a href="/index.html">math and philosophy blog</a> </li>
+                    <li> <a href="/e&p.html">Programming and Engineering Projects</a> </li>
+                    <li> <a href="/about.html">About </a> </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('/img/black.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>H_1(Graph) </h1>
+                        <h2 class="subheading">HTML, CSS, JavaScript</h2>
+                        <span class="meta">Posted on 12/25/2020</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                 <p> This is a tool to calculate the directly homology of a directed graph, intuitively understood as the number of directed cycles in a graph.</p>
+                    
+                 <div class = 'tool'>
+
+                        <canvas id='canvas' width = '395' height = '300'></canvas>
+                        
+                        <input id = 'edgesField' placeholder='type number of nodes to insert' class = 'span-two'> 
+                        <button id = 'nodeBtn' class = 'span-two'> insert node(s) </button >
+
+                        <input id = 'nodesField' placeholder='type two nodes separated by commas' class = 'span-two'>
+                        <button id = 'edgeBtn' class = 'span-two'>  insert edge </button>
+                    
+                </div>
+                    
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+
+    <!-- Theme JavaScript -->
+    <script src="/js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
