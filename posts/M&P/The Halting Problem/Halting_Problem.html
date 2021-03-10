@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sample Post</title>
+    <title>The Halting Problem</title>
 
    <!-- Bootstrap Core CSS -->
    <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -49,7 +49,13 @@
                     <div class="post-heading">
                         <h1>The Halting Problem</h1>
                         <h2 class="subheading">A Conceptual Proof</h2>
-                        <span class="meta">Posted on August 24, 2014</span>
+                        <span class="meta">Posted on March 9, 2021</span>
+                        <span class="meta">Last updated on 
+                            <script>
+                                 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                                 d = new Date();
+                                document.write( months[d.getMonth()]," ", d.getDate(),", ", d.getFullYear() ); 
+                            </script> 
                     </div>
                 </div>
             </div>
@@ -61,19 +67,49 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p>The  Halting  Problem  is  to  find  an  effective  procedure  that,  given  any  Turing machine \( M \), say represented by its Turing machine number \( m \), and given any number \( n \), will enableus to determine whether or not the machine, given that number as input, ever halts. (Boolos, 2007) We will sketch the proof of why the Halting Problem is not solvable by a Turing machine. </p>
+                    <p>The  Halting  Problem  is  to  find  an  effective  procedure  that,  given  any  Turing machine \( M \) represented by some encoding of its algorithm as a natural number <i>m</i> will halt on input <i>n</i> (Boolos, 2007).</p>
 
                     <p>I will give what I call a 'conceptual proof' which is an un-rigorous argument meant to illustrate the main idea of the proof with the details hidden. </p>
 
                     <h2 class="section-heading">The Conceptual Proof</h2>
 
-                    <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+                    <p><i>Proof.</i> Suppose that there exists a Turing machine <i>H</i> that computes the Halting function, </p>
 
-                    <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+                    \[ h(m,n) = \begin{cases} 
+                                0, &\text{if } T_m(n) \text{ does not halt (loops)} \\
+                                1, &\text{if } T_m(n) \text{ does halt}
+                                \end{cases} \]
 
-                    <blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+                    <p>where <i>m</i> is some encoding of the algorithm for Turing machine \( T_m \) and \(n\) is an input.  </p>
 
-                    <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+                    <p>Given <i>H</i>, we can build another Turing machine, <i>L</i>, which computes the function, </p>
+
+                    \[ l(n) = \begin{cases} 
+                                halt, &\text{if } H(n,n) = 0 \\
+                                loop, &\text{if } H(n,n) = 1
+                            \end{cases} \]
+
+                    <p>In other words, if <i>H</i> says that Turing machine \( T_m \) halts on input <i>m</i>, then <i>L</i> does not halt on input <i>m</i>, and vice-versa. Let <i>p</i> be the encoding of the algorithm for <i>L</i>. Now, what does <i>L</i> do on input <i>p</i>? </p>  
+
+                    <p>From the definition of <i>L</i>, </p>
+
+                    \[ l(p) = \begin{cases} 
+                                halt, &\text{if } H(p,p) = 0 \\
+                                loop, &\text{if } H(p,p) = 1
+                            \end{cases} \]
+
+                    <p>which means that</p>
+
+                    \[ l(p) = \begin{cases} 
+                                halt, &\text{if L does not halt on input p}  \\
+                                loop, &\text{if L halts on input p}
+                            \end{cases} \]
+
+                    <p>So <i>L</i> halts on input <i>p</i> iff <i>L</i> does not halt on input <i>p</i>. This is a contradiction. Thus, our assumption of the existence of <i>H</i> must be false.</p>
+
+                    <h2 class="section-heading">The Missing Details</h2>
+
+                    <p>To make this proof rigorous, one has to show how every Turing machine can be encoded into a natural number, and how to build <i>L</i> given <i>H</i>. </p>
 
                     <h2>References</h2>
 
