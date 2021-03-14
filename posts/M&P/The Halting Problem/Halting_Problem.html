@@ -69,7 +69,11 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <p>The  Halting  Problem  is  to  find  an  effective  procedure  that,  given  any  Turing machine \( M \) represented by some encoding of its algorithm as a natural number <i>m</i> will halt on input <i>n</i> (Boolos, 2007).</p>
 
-                    <p>I will give what I call a 'conceptual proof' which is an un-rigorous argument meant to illustrate the main idea of the proof with the details hidden. </p>
+                    <p>I will give a high-level proof which is an un-rigorous argument meant to illustrate the main idea of a proof with the details omitted. </p>
+
+                    <p><i>Remark.</i> All Turing machines can be seen as computing some function from positive integers to positive integers. When speaking of a specific Turing machine, I use an uppercase letter to denote the Turing machine and the same letter in lowercase to denote the function it computes. </p>
+
+                    <p><i>Remark.</i> The set of Turing machines is enumerable so we can number them \( T_1, T_2, T_3,.... \) </p>
 
                     <h2 class="section-heading">The High-level Proof</h2>
 
@@ -109,7 +113,14 @@
 
                     <h2 class="section-heading">The Missing Details</h2>
 
-                    <p>To make this proof rigorous, one has to show how every Turing machine can be encoded into a natural number, and how to build <i>L</i> given <i>H</i>. </p>
+                    <p>To make this proof rigorous, one has to,
+                        <ol>
+                            <li>Give a formal description of a Turing machine.</li>
+                            <li>Show how every Turing machine can be seen as representing a function from positive integers to positive integers.</li>
+                            <li>Show how every Turing machine can be encoded into a natural number from its description (algorithm).</li>
+                            <li>Show how to build <i>L</i> given <i>H</i>.</li>
+                        </ol>
+                        The details on how to do these can be found in the referenced textbook.  </p>
 
                     <h2>References</h2>
 
