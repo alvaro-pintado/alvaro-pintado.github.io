@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Alvaro Pintado</title>
+        <link rel="stylesheet" href = "/css/blog.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,400&display=swap" rel="stylesheet"> 
+
+        <!-- LaTex Rendering with MathJax-->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+
+    <header>
+        
+        <div id="title">
+            <p id= "titleText">Alvaro Pintado</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href = "/index.html">Home</a></li>
+                <li><a href = "/research.html">Research</a></li>
+                <li><a href = "/AlvaroPintado_CV.pdf" >CV</a></li>
+                <li><a href = "/blog.html" class='active-page'>Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<body>
+    <div class = 'post'>
+        <h1 class="section-heading">Technical Results in Mathematical Logic and Paradox</h1>
+
+
+        <p>The proof of the 1st Incompleteness Theorem is often described as encoding something like the Liar's Pardox into the language of arithmetic. I'd like to give a short exposition making that description a bit more precise. </p>
+
+        <h2 class="section-heading">The Incompleteness Theorems</h2>
+
+        <p> The theorem mentions the set of axioms <i>N</i>. <i>N</i> is very basic: it's the finite fragment of Peano Arithmetic without the induction schema. Let us now state the 1st Incompleteness Theorem.  </p>
+
+        <p><b>1st Incompleteness Theorem.</b> Suppose that <i>T</i> is a consistent and recursive set of axioms in the language of arithmetic \( \mathcal{L}_{NT}\) that is at least as strong as <i>N</i>. Then there is a sentence \(\phi\) such that \( \mathbb{N}\vDash\phi, \) but \(T\nvdash\phi\). In other words, \(\phi\) is a true statement of the natural numbers, but <i>T</i> does not prove \(\phi\). </p>
+
+        <p> In many modern presentations of Godel's Incompleteness theorem, the theorem follows from the use of the so-called "Self-Reference lemma" (sometimes called the "Fixed Point Theorem" or "Diagonal lemma"). We will see how calling it the "Self-Reference" lemma is not quite right. </p>
+
+        <p>Let us state the Self-Reference lemma. In the theorem, \(\ulcorner\phi\urcorner\) is the Godel code for \(\phi \) (the additional bar is used to denote the syntactic term for the Godel code).  </p>
+
+        <p><b>Self-Reference Lemma.</b> Let \(\psi(v_1)\) be an \( \mathcal{L}_{NT} \)-formula with only \(v_1\) free. Then there is a sentence \( \phi \) such that 
+        
+            \[  N\vdash\phi\leftrightarrow\psi(\overline{\ulcorner\phi\urcorner}) . \]
+        </p>
+        
+
+        <p> This is a key lemma to modern presentations of the theorem. Some people describes this theorem by stating that \( \phi \) "says" that it has the property \( \psi \). But seeing the theorem now, it seems that the more precise thing to say is that&mdash;over <i>N</i>&mdash;\( \phi \) is logically equivalent (or better, yet, provably equivalent) to <i>it</i> having the property \( \psi \).    </p>
+
+        <p> The way you get 1st Incompleteness Theorem is by taking the property \( \psi \) to be the property not-provable-from-<i>N</i> ( \(\neg\mathbf{Thm_{N}}\) ). By the Self-Reference Lemma, there exists a sentence \( \phi \) such that 
+            \[  N\vdash\big(\phi\leftrightarrow\neg\mathbf{Thm_{N}}(\overline{\ulcorner\phi\urcorner})\big) . \]
+        </p>
+
+        <p> So \( \phi \) "says" that it is not provable from <i>N</i>. Or more precisely, \( \phi \) is provably equivalent (over <i>N</i>) to the proposition that it is not provable from <i>N</i>. </p>
+
+        
+        
+        </p>
+
+        <p> 
+            <i>Remark.</i> There is some debate about this, but many people attribute this general form of the Self-Reference lemma to Carnap (see 
+            <a href="https://href=www.logicmatters.net/2012/01/06/carnap-and-the-diagonalization-lemma">Peter Smith post</a>
+             ).
+        </p>
+
+        <h2 class="section-heading">Squeezing the Lemma for More Juice</h2>
+
+        <p>The Self-Reference lemma is amazing and has far reaching consequences. Let's turn the crank some more and see what else we can get from it. 
+        </p>
+
+        <p><b>Tarski's Undefinability of Truth.</b> The set of Godel codes of formulas true in \( \mathbb{N} \) is not definable in \( \mathcal{L}_{NT}\). 
+            
+        <p> <i>Proof.</i> Suppose towards a contradiction that there was a formula \( \mathbf{True}_{\mathbb{N}}(x) \) such that \( \mathbf{True}_{\mathbb{N}}(\ulcorner\varphi\urcorner)\iff \mathbb{N}\vDash\varphi \). By the Self-Reference lemma, there exists a \( \phi \) such that </p>
+
+        \[           N\vdash \phi\leftrightarrow\neg \mathbf{True}_{\mathbb{N}}(\overline{\ulcorner\phi\urcorner})       \]
+        
+        <p> So \( \phi \) is provably equivalent to it being false. By Soundness and definitions,
+
+        \[           \mathbb{N}\vDash \phi\leftrightarrow\neg \mathbf{True}_{\mathbb{N}}(\overline{\ulcorner\phi\urcorner})       \]
+        
+        Now we have that \( \phi \) is logically equivalent to the proposition that it is false. Note that this is almost like the Liar's Paradox. The Liar sentence, L, is true iff it's false and \( \phi \) is true iff it's false, over <i>N</i> (I think this is an important difference and will say more later).    </p>
+
+        <p>
+            Since structures decide all sentences then the naturals \( \mathbb{N} \) think that \( \phi \) is true or it's negation is true. If \( \mathbb{N}\vDash\phi \), then \( \mathbb{N}\vDash\neg \mathbf{True}_{\mathbb{N}}(\overline{\ulcorner\phi\urcorner}) \) and \( \mathbb{N}\vDash\neg\phi \). Contradiction. Now if \( \mathbb{N}\vDash\neg\phi \), then \( \mathbb{N}\vDash \mathbf{True}_{\mathbb{N}}(\overline{\ulcorner\phi\urcorner}) \) and \( \mathbb{N}\vDash\phi \). Contradiction. In either case we land in contradiction so the assumption about the existence of \( \mathbf{True}_{\mathbb{N}} \) must have been false. Thus, arithmetic truth is not arithmetically definable.
+        </p>
+        
+        <h2 class="section-heading">The Relation to Semantic Paradox</h2>
+
+        <p> It seems clear that the proofs of many classical negative results are close to formalizations of well-known paradoxes in philosophy of logic and language. We will describe the connection between the proofs of the technical results and how they formalize paradoxes. Morever, we give some comments on the subtle differences between the paradoxes and their formalizations. </p>
+
+        <h4 class="section-heading">The Liar's Paradox & Undefinability of Truth</h4>
+
+        <p> The proof of the Undefinability of Truth constructs a sentence that is false iff it's true in very much the same way the Liar is true iff it's false. Furthermore, this is done by the use of a truth predicate. The important difference here is that this is in the context of extra axioms, namely \(N\). So it's not necessarily (very likely not) the case that constructed sentence is logically equivalent to the proposition that it is false without the additional axioms of \(N\). Moreover the sentence does not predicate falsehood of itself, but rather, in the context of \(N\), is logically equivalent to the proposition that predicates falsehood of it.   </p>
+
+        <h4 class="section-heading">Berry's Paradox & the 1st Incompleteness Theorem</h4>
+        
+        <p> Boolos showed how to prove the 1st Incompleteness Theorem by formalizing Berry's Paradox. [<b>give short description of proof</b>] </p>
+
+        <h4 class="section-heading">Exam Day Paradox & the 2nd Incompleteness Theorem</h4>
+
+        <p> The proof of what is usually called the "2nd Incompleteness Theorem" proved by Rosser is done by formalizing a syntactic version of the Exam Day Paradox (which is actually an epistemic paradox).  </p>
+
+        <p><b>Rosser's Theorem</b> If <i>T</i> is a set of \( \mathcal{L}_{NT} \)-axioms that is recursive, consistent, and extends <i>N</i>, then <i>T</i> is incomplete.
+
+        <p>The proof of Rosser's theorem involves a sentence \( \rho \) that is provably equivalent over \(N\) to a formula that states that if there is a proof of \(\rho\), then there is a shorter proof of \( \neg\rho \). This is similar to the Exam Day Paradox where if the student deduces that the exam is to be given on a certain day of the week, then that entails that it will be given on an earlier day of the week [<b>make this more explicit</b>] .  </p>
+
+       
+
+        
+        <h3 class="section-heading">Alternative Proofs of the 1st Incompleteness Theorem</h3>
+        <p> I just wanted to quickly mention there are other proofs of these results where it isn't clear to me whether they involve formalizing paradoxes into the formal system.  </p>
+
+        <h2>References</h2>
+
+        <p> Christopher C. Leary, Lars Kristiansen <i>A Friendly Introduction to Mathematical Logic</i>, 2nd 2015.</p>
+    </div>
+</body>
+
+</html>
