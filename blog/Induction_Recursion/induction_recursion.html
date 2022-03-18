@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Alvaro Pintado</title>
+        <link rel="stylesheet" href = "/css/blog.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,400&display=swap" rel="stylesheet"> 
+
+        <!-- LaTex Rendering with MathJax-->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+
+    <header>
+        
+        <div id="title">
+            <p id= "titleText">Alvaro Pintado</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href = "/index.html">Home</a></li>
+                <li><a href = "/research.html">Research</a></li>
+                <li><a href = "/AlvaroPintado_CV.pdf" >CV</a></li>
+                <li><a href = "/blog.html" class='active-page'>Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<body>
+    <div class = 'post'>
+        <h1 class="section-heading">Induction and Recursion</h1>
+
+
+        <p> Simply put, induction principles allow you to <i>prove</i> certain theorems and recursion principles allow you to <i>construct</i> objects in a certain way. The relation between the two is that for every recursively defined set of objects there is a corresponding induction principle for the set of objects which allows you to prove theorems about those objects inductively. So defintiions by recursion allow for proofs by induction. I will try to do this in full generality and describe common examples.  </p>
+
+        <h2 class="section-heading">Recursion</h2>
+
+        <p> Let \( G\subset U \) be some set which I'll call the 'generating set' and a function \( f:U\rightarrow U  \). Intuitively, \( f\) is an object-building function which allows you to build more complicated objects from the initial generating set \( G \). This can be generalized to more than one function of higher arities, but I think a single unary function suffices to explain the concepts. Now let \(\overline{G}\) be the set of elements in \(U\) that can be obtained by a finite number of applications of \(f\)  (closure of \(G\) under \(f\)). </p>
+
+        <p> <b>Example.</b>
+            A simple example of such a set is we can take \(U\) to be the set of all expressions in the language of propositional logic (PL), \( G \) to be the set of atomic propositions, and the function \(f\) to be the negation function which takes in an expression of PL and outputs the expression with a negation in front of it. For this example, \( \overline{G} \) is the set of all propositions with some finite amount of negations (possibly 0). One can add more functions here such as AND, OR, and so on to make \( \overline{G} \) the set of all well-formed formulas in propositional logic.
+        </p>
+
+        <p> OK so now we have \( G \) which is our set of recursively defined objects. Suppose now that we want to define a function on our set of recursively defined objects  \( G \) but in a way that uses the recursive definition of the objects. What I mean is that we want \(h\) that  </p>
+
+        <h2 class="section-heading">Induction</h2>
+
+        <p>
+            The princple of induction can be extended to any set with a well-founded relation. special case: transfinite induction, nat number induction
+        </p>
+
+
+        <h2 class="section-heading">Special Cases</h2>
+
+        <h4 class="section-heading">Induction and Recursion on \( \mathbb{N} \)</h4>
+
+        <h4 class="section-heading">Induction and Recursion on \( \mathbf{ORD} \)</h4>
+
+
+        <h2>References</h2>
+
+        <p> Christopher C. Leary, Lars Kristiansen <i>A Friendly Introduction to Mathematical Logic</i>, 2nd 2015.</p>
+    </div>
+</body>
+
+</html>
