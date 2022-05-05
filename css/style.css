@@ -1,65 +1,45 @@
 @charset "utf-8";
-
-body{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Spectral', serif;    
-    border-left: 500px solid rgb(245, 245, 245);
-    border-right: 500px solid rgb(245, 245, 245);
-    border-bottom: 50px solid rgb(245, 245, 245);
-    text-align: left;
+:root {
+    --space: rgb(255, 255, 250);
 }
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 1.5fr 0.25fr;
+    grid-template-areas: 
+    "navspace1 nav nav navspace2"
+    "space1 main main space2"
+    "footer footer footer footer";
 
-h1,h2,h3,h4,h5{
-    text-align: center;
-}
-
-
-.center, p{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
-#title{
-    margin: 0px;
-    padding: 0px;
-    text-align: center;
-    font-size: 50px;
-    font-family: 'Spectral', serif;
-    font-variant: small-caps;
-    line-height: 1px;
 }
 
 header{
-    border: 1px solid rgb(245, 245, 245);
-    border-top: 50px solid rgb(245, 245, 245);
-}
-
-
-nav{
-    margin: 0px;
-    padding: 0px;
-}
-
-nav ul{
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
+    margin-left: 25%;
+    margin-right: 25%;
     text-align: center;
 }
 
-nav a:link{
-    color: black;
+nav{
+    background-color: lightgray;
+    grid-area: nav;
+}
+
+nav ul{
+    list-style: none;
+    text-align: center;
 }
 
 nav li{
     display: inline-block;
     margin: 50px;
     margin-top: 0px;
-    margin-bottom: 25px;
+    margin-bottom: 0px;
     padding: 0px;
+}
+
+nav a:link{
+    color: black;
 }
 
 nav ul li a.active-page
@@ -68,20 +48,45 @@ nav ul li a.active-page
     border-style: solid;
 }
 
-.post-preview{
+main{
+    background-color: rgb(115, 172, 224);
+    grid-area: main;
+    margin-top: 10%;
+}
+
+
+header{
+    background-color: pink;
+}
+
+footer{
+    background-color: var(--space);
+    grid-area: footer;
     text-align: center;
-    margin: 0px;
-    padding: 0px;
-    line-height: 1px;
 }
 
-.post-preview a:link{
-    color: black
+#navspace1{
+    background-color: var(--space);
+    grid-area: navspace1;
+}
+#navspace2{
+    background-color: var(--space);
+    grid-area: navspace2;
+}
+#space1{
+    background-color: var(--space);
+    grid-area: space1;
+}
+#space2{
+    background-color: var(--space);
+    grid-area: space2;
 }
 
-.post{
-    text-align: left;
+
+
+.center, p{
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 75%;
 }
