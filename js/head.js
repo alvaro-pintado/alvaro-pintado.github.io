@@ -3,7 +3,7 @@ document.write(`
 <title>Alvaro Pintado</title>
 <link rel="stylesheet" href = "/css/style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Cardo " rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css?family=Libre Baskerville" rel="stylesheet"> 
 
 <!-- LaTex Rendering with MathJax-->

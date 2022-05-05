@@ -3,7 +3,7 @@
     --space: #f2f3f3;
 }
 .container{
-    font-family:  Spectral ;
+    font-family:  Cardo ;
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
