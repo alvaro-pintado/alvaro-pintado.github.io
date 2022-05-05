@@ -1,13 +1,15 @@
 @charset "utf-8";
 :root {
-    --space: rgb(255, 255, 250);
+    --space: rgb(255, 255, 245);
 }
 .container{
+    font-family:  Roboto Slab ;
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.1fr 1.5fr 0.25fr;
+    grid-template-rows: 0.1fr 0.1fr 1.5fr 0.25fr;
     grid-template-areas: 
+    "headspace1 header header headspace2"
     "navspace1 nav nav navspace2"
     "space1 main main space2"
     "footer footer footer footer";
@@ -15,13 +17,15 @@
 }
 
 header{
-    margin-left: 25%;
-    margin-right: 25%;
+    font-family:  Roboto Slab ;
     text-align: center;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    font-size: 2.5em;
+    grid-area: header;
 }
 
 nav{
-    background-color: lightgray;
     grid-area: nav;
 }
 
@@ -32,7 +36,7 @@ nav ul{
 
 nav li{
     display: inline-block;
-    margin: 50px;
+    margin: 10%;
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 0px;
@@ -49,20 +53,18 @@ nav ul li a.active-page
 }
 
 main{
-    background-color: rgb(115, 172, 224);
     grid-area: main;
-    margin-top: 10%;
+    margin-top: 1%;
 }
 
-
-header{
-    background-color: pink;
-}
-
-footer{
+/* These are the surrounding blank areas. */
+#headspace1{
+    grid-area: headspace1;
     background-color: var(--space);
-    grid-area: footer;
-    text-align: center;
+}
+#headspace2{
+    grid-area: headspace2;
+    background-color: var(--space);
 }
 
 #navspace1{
@@ -82,13 +84,45 @@ footer{
     grid-area: space2;
 }
 
+footer{
+    background-color: var(--space);
+    grid-area: footer;
+    text-align: center;
+}
+/* These are the surrounding blank areas. */
 
 
+a:link{
+    color: rgb(0, 110, 255);
+
+}
 .center, p{
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 75%;
+}
+
+h1,h2,h3,h4,h5{
+    text-align: center;
+}
+
+.post-preview{
+    text-align: center;
+    margin: 0%;
+    padding: 0%;
+    line-height: 1px;
+}
+
+.post-preview a:link{
+    color: black
+}
+
+.post{
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 @media only screen and (max-width: 550px){

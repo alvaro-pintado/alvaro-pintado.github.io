@@ -1,66 +1,49 @@
 @charset "utf-8";
-
-body{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Spectral', serif;    
-    border-left: 500px solid rgb(245, 245, 245);
-    border-right: 500px solid rgb(245, 245, 245);
-    border-bottom: 50px solid rgb(245, 245, 245);
-    text-align: left;
+:root {
+    --space: rgb(255, 255, 245);
 }
+.container{
+    font-family:  Roboto Slab ;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 1.5fr 0.25fr;
+    grid-template-areas: 
+    "headspace1 header header headspace2"
+    "navspace1 nav nav navspace2"
+    "space1 main main space2"
+    "footer footer footer footer";
 
-h1,h2,h3,h4,h5{
-    text-align: center;
-}
-
-
-
-.center, p, ol{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
-}
-
-#title{
-    margin: 0px;
-    padding: 0px;
-    text-align: center;
-    font-size: 50px;
-    font-family: 'Spectral', serif;
-    font-variant: small-caps;
-    line-height: 1px;
 }
 
 header{
-    border: 1px solid rgb(245, 245, 245);
-    border-top: 50px solid rgb(245, 245, 245);
+    font-family:  Roboto Slab ;
+    text-align: center;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    font-size: 2.5em;
+    grid-area: header;
 }
 
-
 nav{
-    margin: 0px;
-    padding: 0px;
+    grid-area: nav;
 }
 
 nav ul{
-    margin: 0px;
-    padding: 0px;
     list-style: none;
     text-align: center;
 }
 
-nav a:link{
-    color: black;
-}
-
 nav li{
     display: inline-block;
-    margin: 50px;
+    margin: 10%;
     margin-top: 0px;
-    margin-bottom: 25px;
+    margin-bottom: 0px;
     padding: 0px;
+}
+
+nav a:link{
+    color: black;
 }
 
 nav ul li a.active-page
@@ -69,10 +52,67 @@ nav ul li a.active-page
     border-style: solid;
 }
 
+main{
+    grid-area: main;
+    margin-top: 1%;
+}
+
+/* These are the surrounding blank areas. */
+#headspace1{
+    grid-area: headspace1;
+    background-color: var(--space);
+}
+#headspace2{
+    grid-area: headspace2;
+    background-color: var(--space);
+}
+
+#navspace1{
+    background-color: var(--space);
+    grid-area: navspace1;
+}
+#navspace2{
+    background-color: var(--space);
+    grid-area: navspace2;
+}
+#space1{
+    background-color: var(--space);
+    grid-area: space1;
+}
+#space2{
+    background-color: var(--space);
+    grid-area: space2;
+}
+
+footer{
+    background-color: var(--space);
+    grid-area: footer;
+    text-align: center;
+}
+/* These are the surrounding blank areas. */
+
+
+a:link{
+    color: rgb(0, 110, 255);
+
+}
+.center, p{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+h1,h2,h3,h4,h5{
+    text-align: center;
+}
+
+
+/* for the blog posts */
 .post-preview{
     text-align: center;
-    margin: 0px;
-    padding: 0px;
+    margin: 0%;
+    padding: 0%;
     line-height: 1px;
 }
 
@@ -80,10 +120,20 @@ nav ul li a.active-page
     color: black
 }
 
-.post{
-    text-align: left;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+ol{
+    width: 75%;
 }
+/* for the blog posts */
 
+
+
+@media only screen and (max-width: 550px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 1 fr 0.1fr;
+        grid-template-areas: 
+        "nav"
+        "main"
+        "footer";
+    }
+}

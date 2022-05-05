@@ -6,93 +6,116 @@
         <title>Alvaro Pintado</title>
         <link rel="stylesheet" href = "/css/blog.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,400&display=swap" rel="stylesheet"> 
-
+        <link href="href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"> 
+    
         <!-- LaTex Rendering with MathJax-->
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </head>
-
-    <header>
         
-        <div id="title">
-            <p id= "titleText">Alvaro Pintado</p>
-        </div>
-
+            
+        
+        
+    <div class = "container" >
+        <div id="headspace1"></div>
+        <header>
+    
+            <div id="title">
+                <p id= "titleText">Alvaro Pintado</p>
+            </div>
+            
+        </header>
+        <div id="headspace2"></div>
+    
+        <div id="navspace1"></div>
         <nav>
             <ul>
-                <li><a href = "/index.html">Home</a></li>
+                <li><a href = "/index.html" class='active-page'>Home</a></li>
                 <li><a href = "/research.html">Research</a></li>
                 <li><a href = "/AlvaroPintado_CV.pdf" >CV</a></li>
-                <li><a href = "/blog.html" class='active-page'>Blog</a></li>
+                <li><a href = "/blog.html">Blog</a></li>
             </ul>
         </nav>
-    </header>
-
-<body>
-    <div class = 'post'>
-        <h1 class="section-heading">The Halting Problem</h1>
-
-        <p>The  Halting  Problem  is  to  find  an  effective  procedure  that,  given  any  Turing machine \( T_m \)  will determine whether \( T_m \) will halt on input <i>n</i> or loop forever. </p>
-
-        <p>I will give a high-level proof which is an un-rigorous argument meant to illustrate the main idea of a proof with the details omitted. </p>
-
-        <p><i>Remark.</i> All Turing machines can be seen as computing some function from positive integers to positive integers. When speaking of a specific Turing machine, I use an uppercase letter to denote the Turing machine and the same letter in lowercase to denote the function it computes. </p>
-
-        <p><i>Remark.</i> Every Turing machine can be encoded into a natural number <i>m</i>. We denote the corresponding Turing machine \( T_m \). </p>
-
-        <h2 class="section-heading">The High-level Proof</h2>
-
-        <p><i>Proof.</i> Suppose that there exists a Turing machine <i>H</i> that computes the Halting function, </p>
-
-        \[ h(m,n) = \begin{cases} 
-                    0, &\text{if } T_m(n) \text{ does not halt (loops)} \\
-                    1, &\text{if } T_m(n) \text{ does halt}
-                    \end{cases} \]
-
-        <p>where <i>m</i> is some encoding of the algorithm for Turing machine \( T_m \) and \(n\) is an input.  </p>
-
-        <p>Given <i>H</i>, we can build another Turing machine, <i>L</i>, which computes the function, </p>
-
-        \[ l(n) = \begin{cases} 
-                    halt, &\text{if } H(n,n) = 0 \\
-                    loop, &\text{if } H(n,n) = 1
-                \end{cases} \]
-
-        <p>In other words, if <i>H</i> says that Turing machine \( T_m \) halts on input <i>m</i>, then <i>L</i> does not halt on input <i>m</i>, and vice-versa. Let <i>p</i> be the encoding of the algorithm for <i>L</i>. Now, what does <i>L</i> do on input <i>p</i>? </p>  
-
-        <p>From the definition of <i>L</i>, </p>
-
-        \[ l(p) = \begin{cases} 
-                    halt, &\text{if } H(p,p) = 0 \\
-                    loop, &\text{if } H(p,p) = 1
-                \end{cases} \]
-
-        <p>which means that</p>
-
-        \[ l(p) = \begin{cases} 
-                    halt, &\text{if L does not halt on input p}  \\
-                    loop, &\text{if L halts on input p}
-                \end{cases} \]
-
-        <p>So <i>L</i> halts on input <i>p</i> iff <i>L</i> does not halt on input <i>p</i>. This is a contradiction. Thus, our assumption of the existence of <i>H</i> must be false.</p>
-
-        <h2 class="section-heading">The Missing Details</h2>
-
-        <p>To make this proof rigorous, one has to, </p>
-            <ol>
-                <li>Give a formal description of a Turing machine.</li>
-                <li>Show how every Turing machine can be seen as representing a function from positive integers to positive integers.</li>
-                <li>Show how every Turing machine can be encoded into a natural number from its formal description (algorithm).</li>
-                <li>Show how to build <i>L</i> given <i>H</i>.</li>
-            </ol>
-
-        <p> The details on how to do these can be found in the referenced textbook.  </p>
-
-        <h2>References</h2>
-
-        <p> John P. Burgess George S. Boolos Richard C. Jeffrey, <i>Logic and Computability</i>, 5th, 2007.</p>
-    </div>
-</body>
+    
+        <div id="navspace2"></div>
+    
+    
+        <div id="space1"></div>
+    
+    
+        <main>
+            <div class = 'post'>
+                <h1 class="section-heading">The Halting Problem</h1>
+        
+                <p>The  Halting  Problem  is  to  find  an  effective  procedure  that,  given  any  Turing machine \( T_m \)  will determine whether \( T_m \) will halt on input <i>n</i> or loop forever. </p>
+        
+                <p>I will give a high-level proof which is an un-rigorous argument meant to illustrate the main idea of a proof with the details omitted. </p>
+        
+                <p><i>Remark.</i> All Turing machines can be seen as computing some function from positive integers to positive integers. When speaking of a specific Turing machine, I use an uppercase letter to denote the Turing machine and the same letter in lowercase to denote the function it computes. </p>
+        
+                <p><i>Remark.</i> Every Turing machine can be encoded into a natural number <i>m</i>. We denote the corresponding Turing machine \( T_m \). </p>
+        
+                <h2 class="section-heading">The High-level Proof</h2>
+        
+                <p><i>Proof.</i> Suppose that there exists a Turing machine <i>H</i> that computes the Halting function, </p>
+        
+                \[ h(m,n) = \begin{cases} 
+                            0, &\text{if } T_m(n) \text{ does not halt (loops indefinitely)} \\
+                            1, &\text{if } T_m(n) \text{ does halt}
+                            \end{cases} \]
+        
+                <p>where <i>m</i> is some encoding of the algorithm for Turing machine \( T_m \) and \(n\) is an input.  </p>
+        
+                <p>Given <i>H</i>, we can build another Turing machine, <i>L</i>, which computes the function, </p>
+        
+                \[ l(n) = \begin{cases} 
+                            halt, &\text{if } H(n,n) = 0 \\
+                            loop, &\text{if } H(n,n) = 1
+                        \end{cases} \]
+        
+                <p>In other words, if <i>H</i> says that Turing machine \( T_m \) halts on input <i>m</i>, then <i>L</i> does not halt on input <i>m</i>, and vice-versa. Let <i>p</i> be the encoding of the algorithm for <i>L</i>. Now, what does <i>L</i> do on input <i>p</i>? </p>  
+        
+                <p>From the definition of <i>L</i>, </p>
+        
+                \[ l(p) = \begin{cases} 
+                            halt, &\text{if } H(p,p) = 0 \\
+                            loop, &\text{if } H(p,p) = 1
+                        \end{cases} \]
+        
+                <p>which means that</p>
+        
+                \[ l(p) = \begin{cases} 
+                            halt, &\text{if L does not halt on input p}  \\
+                            loop, &\text{if L halts on input p}
+                        \end{cases} \]
+        
+                <p>So <i>L</i> halts on input <i>p</i> iff <i>L</i> does not halt on input <i>p</i>. This is a contradiction. Thus, our assumption of the existence of <i>H</i> must be false.</p>
+        
+                <h2 class="section-heading">The Missing Details</h2>
+        
+                <p>To make this proof rigorous, one has to </p>
+                    <ol>
+                        <li>Give a formal description of a Turing machine.</li>
+                        <li>Show how every Turing machine can be seen as representing a function from positive integers to positive integers.</li>
+                        <li>Show how every Turing machine can be encoded into a natural number from its formal description (algorithm).</li>
+                        <li>Show how to build <i>L</i> given <i>H</i>.</li>
+                    </ol>
+        
+                <p> The details on how to do these can be found in the referenced textbook.  </p>
+        
+                <h2>References</h2>
+        
+                <p> John P. Burgess George S. Boolos Richard C. Jeffrey, <i>Logic and Computability</i>, 5th, 2007.</p>
+            </div>
+        </main>
+    
+        <div id="space2"></div>
+    
+        <footer>
+            
+        </footer>
+    
+    </div>>
+    
 
 </html>
