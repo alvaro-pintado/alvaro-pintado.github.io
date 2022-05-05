@@ -4,7 +4,7 @@ document.write(`
 <link rel="stylesheet" href = "/css/style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet"> 
-<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Libre Baskerville" rel="stylesheet"> 
 
 <!-- LaTex Rendering with MathJax-->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

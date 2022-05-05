@@ -7,7 +7,7 @@
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.1fr 0.1fr 1.5fr 0.25fr;
+    grid-template-rows: 0.1fr 0.1fr 1.5fr 2fr;
     grid-template-areas: 
     "headspace1 header header headspace2"
     "navspace1 nav nav navspace2"
@@ -17,7 +17,7 @@
 }
 
 header{
-    font-family:  Merriweather;
+    font-family: Libre Baskerville;
     text-align: center;
     margin-top: 0%;
     margin-bottom: 0%;
@@ -25,6 +25,7 @@ header{
     grid-area: header;
     border-top: 1px solid #bdc1c4 ;    
 }
+
 
 nav{
     grid-area: nav;
@@ -35,7 +36,6 @@ nav{
 nav ul{
     list-style: none;
     text-align: center;
-    color: red;
 }
 
 nav li{
@@ -57,6 +57,10 @@ nav ul li a.active-page
     border-style: solid;
 }
 
+hr{
+    border: 1px solid rgb(78, 175, 255);
+}
+
 main{
     grid-area: main;
     margin-top: 1%;
@@ -64,6 +68,10 @@ main{
     border-top: 1px solid white;
     border-radius: 5px;
 
+}
+
+img{
+    border-radius: 10%;
 }
 
 /* These are the surrounding blank areas. */
@@ -145,3 +153,8 @@ h1,h2,h3,h4,h5{
         "footer";
     }
 }
+
+
+
+
+/* animation stuff  */
