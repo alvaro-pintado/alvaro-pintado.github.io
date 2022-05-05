@@ -1,9 +1,9 @@
 @charset "utf-8";
 :root {
-    --space: rgb(255, 255, 245);
+    --space: #f2f3f3;
 }
 .container{
-    font-family:  Roboto Slab ;
+    font-family:  Spectral ;
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -17,21 +17,25 @@
 }
 
 header{
-    font-family:  Roboto Slab ;
+    font-family:  Merriweather;
     text-align: center;
     margin-top: 0%;
     margin-bottom: 0%;
-    font-size: 2.5em;
+    font-size: 1.5em;
     grid-area: header;
+    border-top: 1px solid #bdc1c4 ;    
 }
 
 nav{
     grid-area: nav;
+    border: 1px solid #bdc1c4 ;
+    border-radius: 5px;
 }
 
 nav ul{
     list-style: none;
     text-align: center;
+    color: red;
 }
 
 nav li{
@@ -40,6 +44,7 @@ nav li{
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 0px;
+
 }
 
 nav a:link{
@@ -55,6 +60,10 @@ nav ul li a.active-page
 main{
     grid-area: main;
     margin-top: 1%;
+    border: 1px solid #bdc1c4;
+    border-top: 1px solid white;
+    border-radius: 5px;
+
 }
 
 /* These are the surrounding blank areas. */
