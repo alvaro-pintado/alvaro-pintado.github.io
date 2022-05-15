@@ -50,7 +50,7 @@
                 A simple example of such a set is we can take \(U\) to be the set of all expressions in the language of propositional logic (PL), \( G \) to be the set of atomic propositions, and the function \(f\) to be the negation function which takes in an expression of PL and outputs the expression with a negation in front of it. For this example, \( R \) is the set of all propositions with some finite amount of negations (possibly 0). One can add more functions here such as AND, OR, and so on to make \( R \) the set of all well-formed formulas in propositional logic.
                 </p>
 
-                <p> OK so now we have \( G \) which is our set of recursively defined objects. Suppose now that we want to define a function on our set of recursively defined objects  \( G \) but in a way that takes advantage of the recursive definition of the objects. What I mean is that we want a function \(h:R\rightarrow R\) that is described by giving  </p>
+                <p> OK so now we have \( R \) which is our set of recursively defined objects. Suppose now that we want to define a function (with codomain \(V\)) on our set of recursively defined objects  \( R \) but in a way that takes advantage of the recursive definition of the objects. What I mean is that we want a function \(h:R\rightarrow V\) that is described by giving  </p>
 
                 <ol>
                     <li>rules for computing \(h(x)\) for \(x\in G\)</li>
@@ -72,7 +72,7 @@
 
                 <img class = "center"  src = "diagram.png" style="width:25%;height:25%;">
 
-                <p><i>Remark.</i> \(F\) here corresponds to the rule for computing general outputs in terms of previously defined outputs (i.e. rule (2) as first described in the recursive definition of \(h\). Note that this would be function from \(V\) to \(V\). </p>
+                <p><i>Remark.</i> \(F\) here corresponds to the rule for computing general outputs in terms of previously defined outputs (i.e. rule (2) as first described in the recursive definition of \(h\)). Note that this would be function from \(V\) to \(V\). </p>
 
 
                 <p>The hypothesis of the theorem is that \(R\) be <i>freely generated</i> by \(f\). Let us define this.</p>
@@ -84,10 +84,10 @@
                 <h2 class="section-heading">Induction</h2>
 
                 <p>
-                    Now that we have a recursively-defined objects. How do we prove things about these recursively-defined objects in a way that takes advantage of their recursive definition? The answer is that we use induction principles.  
+                Now that we have a set of recursively-defined objects. How do we prove things about these recursively-defined objects in a way that takes advantage of their recursive definition? The answer is that we use induction principles.  
                 </p>
 
-                <p> What we would hope for is that if by generating set has a property \(P\) and the property is preserved under by object-building operations, then my entire collection of objects should satisfy the property \(P\). Fortunately, this is the case. </p>
+                <p> What we would hope for is that if a generating set \(G\) has a property \(P\) and the property is preserved by object-building operations, then the entire collection of objects \(R\) should satisfy the property \(P\). Fortunately, this is the case. </p>
 
                 <p><b>Induction Principle.</b> Suppose that \(R\) is freely generated from \(G\). Furthermore, suppose that for some property \(P\) we have that </p>
 
@@ -111,9 +111,9 @@
                 <hr style="width:50%"> 
                 <h3>Transfinitely</h3>
 
-                <p>You might have heard of transfinite induction and recursion and wondered how it relates to ordinary cases of induction and recursion. Conceptually, they are the same. What is different is the length of the induction and recursion. Ordinary induction (recursion) are of length \(\omega\). Transfinite induction (recursion) extends this to arbitrary ordinal lengths.  </p>
+                <p>You might have heard of transfinite induction and recursion and wondered how it relates to ordinary cases of induction and recursion. Conceptually, they are the same. What is different is the length of the induction and recursion. Ordinary induction (recursion) is of length \(\omega\). Transfinite induction (recursion) extends this to arbitrary ordinal lengths.  </p>
 
-                <p><b>Transfinite Recursion Theorem for Ord.</b> For each formula \(\psi(\alpha)\), if \(\psi(\alpha)\) holds for some ordinal \(\alpha\), then there is a least ordinal \(\xi\) such that \(\xi\). </p>
+                <p><b>Transfinite Recursion Theorem for Ord.</b> If \(F:V\rightarrow V\), then there is a unique \(G:\mathrm{Ord}\rightarrow V\) such that \(\forall\alpha\big[ G(\alpha)=F(G\restriction_\alpha)  \big] .\) </p>
 
                 <p><b>Transfinite Induction on Ord.</b> For each formula \(\psi(\alpha)\), if \(\psi(\alpha)\) holds for some ordinal \(\alpha\), then there is a least ordinal \(\xi\) such that \(\xi\). </p>
 
