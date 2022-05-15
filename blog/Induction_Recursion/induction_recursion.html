@@ -44,10 +44,16 @@
 
                 <p>The idea behind defining a set of objects recursively is to start with some initial collection of objects and then apply operations on them to build new objects from this initial set. The set of the recursively-defined objects will consist of only the initial objects and whatever you can build from a finite number of applications of the building operations. Let's say this a bit more formally. </p>
  
-                <p> We want to take some starting set \(U\) where all objects we talk about live. Our set of recursively defined objects \(R\) will be a subset of \(U\). Let \( G\subset U \) be some set which I'll call the 'generating set' (this is our initial collection) and a function \( f:U\rightarrow U  \). Intuitively, \( f\) is an object-building function which allows you to build more complicated objects from the initial generating set \( G \). This can be generalized to more than one function of higher arities, but I think a single unary function suffices to explain the concepts. Now let \(R\) be the set of elements in \(U\) that can be obtained by a finite number of applications of \(f\)  (closure of \(G\) under \(f\)). This general recursion is often called 'structural recursion' and there's the corresponding phrase for induction. </p>
+                <p> We want to take some starting set \(U\) where all objects we talk about live. Our set of recursively defined objects \(R\) will be a subset of \(U\). Let \( G\subset U \) be some set which I'll call the 'generating set' (this is our initial collection) and a function \( f:U\rightarrow U  \). Intuitively, \( f\) is an object-building function which allows you to build more complicated objects from the initial generating set \( G \). This can be generalized to more than one function of higher arities, but I think a single unary function suffices to explain the concepts. Now let \(R\) be the set of elements in \(U\) that can be obtained by a finite number of applications of \(f\) to elements in \(G\)  (closure of \(G\) under \(f\)). This general recursion is often called 'structural recursion' and there's the corresponding phrase for induction. </p>
 
                 <p> <b>Example.</b>
-                A simple example of such a set is we can take \(U\) to be the set of all expressions in the language of propositional logic (PL), \( G \) to be the set of atomic propositions, and the function \(f\) to be the negation function which takes in an expression of PL and outputs the expression with a negation in front of it. For this example, \( R \) is the set of all propositions with some finite amount of negations (possibly 0). One can add more functions here such as AND, OR, and so on to make \( R \) the set of all well-formed formulas in propositional logic.
+                A simple example of such a set is we can take \(U=\mathbb{R}\), \(G=\{0\} \), and \(f=\mathrm{successor}\). What is \( R\)?
+                </p>
+
+                <p><b>Example.</b> Let \(U=\mathbb{N}\), \(G=\{0,1\} \), and \(f=\mathrm{successor}\).</p>
+
+                <p> <b>Example.</b>
+                Take \(U\) to be the set of all expressions in the language of propositional logic (PL), \( G \) to be the set of atomic propositions, and the function \(f\) to be the negation function which takes in an expression of PL and outputs the expression with a negation in front of it. For this example, \( R \) is the set of all propositions with some finite amount of negations (possibly 0). One can add more functions here such as AND, OR, and so on to make \( R \) the set of all well-formed formulas in propositional logic.
                 </p>
 
                 <p> OK so now we have \( R \) which is our set of recursively defined objects. Suppose now that we want to define a function (with codomain \(V\)) on our set of recursively defined objects  \( R \) but in a way that takes advantage of the recursive definition of the objects. What I mean is that we want a function \(h:R\rightarrow V\) that is described by giving  </p>
@@ -65,7 +71,7 @@
 
                 <ol>
                     <li>\( \overline{h}(x)=h(x) \)</li>
-                    <li>\( \overline{h}(f(x))=F(h(x)) \),</li>
+                    <li>\( \overline{h}(f(x))=F(\overline{h}(x)) \),</li>
                 </ol>
 
                 <p>or equivalently, such that the diagram below commutes.</p>
@@ -80,6 +86,8 @@
                 <p><b>Def.</b> A set \(R\) is <i>freely generated</i> from \(G\) by \(f\) if \(f\restriction_G\) is injective. </p>
 
                 <p><i>Remark.</i> If there are two object-building functions \(f\) and \(g\), then there is an additional hypothesis required being that the range of \(f\restriction_G\), the range of \(g\restriction_G\), and \(G\) are pairwsie disjoint.  </p>
+
+                <p><i>Remark.</i> There are more general versions of the Recursion theorem such as the ones that one needs for defining the Fibonacci sequence.</p>
                                 
                 <h2 class="section-heading">Induction</h2>
 
@@ -106,6 +114,7 @@
                     <li>defining the set of wffs for any formal language (e.g. PL, FOL, SOL, \(\lambda\rightarrow\) )</li>
                     <li>defining the satisfaction relation \(\vDash\) in model theory</li>
                     <li>defining homomorphisms on groups by defining them on them on the generators of the groups</li>
+                    <li>formally defining addition, multiplication, etc, on natural numbers and infinite cardinals in ZFC</li>
                 </ol>
 
                 <hr style="width:50%"> 
