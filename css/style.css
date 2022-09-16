@@ -6,7 +6,7 @@
     font-family:  Cardo ;
     display: grid;
     height: 100vh;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.75fr 1fr 1fr 0.75fr;
     grid-template-rows: 0.1fr 0.1fr 1.5fr 2fr;
     grid-template-areas: 
     "headspace1 header header headspace2"
