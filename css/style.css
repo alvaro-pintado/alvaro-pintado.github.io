@@ -16,6 +16,10 @@
 
 }
 
+body {
+    font-weight: bold;
+  }
+
 header{
     font-family: Libre Baskerville;
     text-align: center;
@@ -44,22 +48,26 @@ nav li{
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 0px;
-
 }
 
+
 nav a:link{
-    color: black;
+    color: #999;
 }
 
 /* There is an attribute (?) in each page that sets it to be the active page. */
 nav ul li a.active-page
 {
-    border: 1px solid black;
+    /*  border: 1px solid black;
     border-style: solid;
+    border-radius: 4px;  */
+    color: black;
 }
 
+
+
 hr{
-    border: 1px solid rgb(78, 175, 255);
+    border: 1px solid rgb(16,98,205);
 }
 
 main{
@@ -68,7 +76,6 @@ main{
     border: 1px solid #bdc1c4;
     border-top: 1px solid white;
     border-radius: 5px;
-
 }
 
 img{
@@ -111,7 +118,7 @@ footer{
 
 
 a:link{
-    color: rgb(0, 110, 255);
+    color: rgb(16,98,205);
 
 }
 .center, p{

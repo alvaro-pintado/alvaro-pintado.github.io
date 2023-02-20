@@ -29,8 +29,8 @@ header{
 
 nav{
     grid-area: nav;
-    border: 1px solid #bdc1c4;
-    
+    border: 1px solid #bdc1c4 ;
+    border-radius: 5px;
 }
 
 nav ul{
@@ -46,14 +46,18 @@ nav li{
     padding: 0px;
 }
 
+
 nav a:link{
-    color: black;
+    color: #999;
 }
 
+/* There is an attribute (?) in each page that sets it to be the active page. */
 nav ul li a.active-page
 {
-    border: 1px solid black;
+    /*  border: 1px solid black;
     border-style: solid;
+    border-radius: 4px;  */
+    color: black;
 }
 
 main{
