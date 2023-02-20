@@ -51,6 +51,10 @@ nav a:link{
     color: #999;
 }
 
+a:visited {
+    color: lightgrey;
+  }
+
 /* There is an attribute (?) in each page that sets it to be the active page. */
 nav ul li a.active-page
 {
@@ -104,7 +108,7 @@ footer{
 
 
 a:link{
-    color: rgb(0, 110, 255);
+    color:  #999;
 
 }
 .center, p{
