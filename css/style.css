@@ -1,8 +1,14 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
+
+
 :root {
     --space: #f2f3f3;
-
+    --platinum: rgb(208, 217, 220);
+    --pgray: rgb(71, 104, 127);
 }
+
 .container{
     font-family:  Cardo ;
     display: grid;
@@ -17,6 +23,33 @@
 
 }
 
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Adjust as needed */
+    grid-template-rows: 1fr; /* Adjust as needed */
+
+}
+
+#headshot {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    object-fit: contain;  /* Make sure the image maintains its aspect ratio */
+    height: 100%;  /* Or set to a specific height */
+    width: 100%;  /* Or set to a specific width */
+
+    border-radius: 5px;
+}
+
+#bio {
+    grid-column: 2;
+    grid-row: 1;
+    width: 110%;  /* Adjust this value as needed */
+    margin: 0%;    
+}
+
+
+
 body {
     font-weight: bold;
 
@@ -29,19 +62,20 @@ header{
     margin-bottom: 0%;
     font-size: 1.5em;
     grid-area: header;
-    border-top: 1px solid #bdc1c4 ;    
+    border-top: 1px solid var(--platinum);    
 }
 
 
 nav{
     grid-area: nav;
-    border: 1px solid #bdc1c4 ;
+    border: 1px solid var(--platinum);
     border-radius: 5px;
 }
 
 nav ul{
     list-style: none;
     text-align: center;
+    white-space: nowrap; /* Add this line */
 }
 
 nav li{
@@ -53,8 +87,9 @@ nav li{
 }
 
 
+
 nav a:link{
-    color: #999;
+    color: var(--pgray);
 }
 
 /* There is an attribute (?) in each page that sets it to be the active page. */
@@ -66,25 +101,46 @@ nav ul li a.active-page
     color: black;
 }
 
-
-
-hr{
-    border: 1px solid rgb(16,98,205);
+#nav-toggle {
+    display: none;
 }
+
+#nav-toggle:checked + label + nav {
+    display: block;
+}
+
+@media (min-width: 600px) {
+    #nav-toggle + label {
+        display: none;
+    }
+    nav {
+        display: block;
+    }
+    nav li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+}
+
+
+#frontpageBar {
+    background-color: rgb(204, 186, 145);
+    border: none; /* This is to remove the default border color of hr */
+    height: 2.5px; /* You can adjust this value to change the thickness of the hr */
+}
+
 
 main{
     grid-area: main;
     margin-top: 1%;
-    border: 1px solid #bdc1c4;
-    border-top: 1px solid white;
+    border: 1px solid var(--platinum);
+    border-top: 1px solid var(--platinum);
     border-radius: 5px;
 }
 
-img{
-    border-radius: 10%;
-}
-
 /* These are the surrounding blank areas. */
+
+
 #headspace1{
     grid-area: headspace1;
     background-color: var(--space);
@@ -116,11 +172,13 @@ footer{
     grid-area: footer;
     text-align: center;
 }
+
+
 /* These are the surrounding blank areas. */
 
 
 a:link{
-    color: rgb(16,98,205);
+    color: rgb(71, 104, 127);
 
 }
 .center, p{
