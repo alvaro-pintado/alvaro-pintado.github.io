@@ -37,12 +37,15 @@ main {
 #headshot {
     grid-column: 1;
     grid-row: 1;
-    height: 50%;  /* Or set to a specific height */
-    width: 50%;  /* Or set to a specific width */
-    border-radius: 5px;
+    border-radius: 1%;
     border: 2.5px solid var(--platinum); 
-
+    margin: 5%;
+    display: flex; /* Add this line */
+    justify-content: center; /* Add this line */
+    align-items: center; /* Add this line */
 }
+
+
 
 #bio {
     grid-column: 2;
@@ -59,6 +62,7 @@ body {
 
 header{
     font-family: Libre Baskerville;
+    font-weight: bold;
     text-align: center;
     margin-top: 0%;
     margin-bottom: 0%;
