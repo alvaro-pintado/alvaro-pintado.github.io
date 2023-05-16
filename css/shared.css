@@ -47,7 +47,7 @@ header{
     margin-bottom: 1%;
     font-size: 1.5em;
     grid-area: header;
-    border: 2.5px solid var(--platinum); 
+    border: 2.5% solid var(--platinum); 
     border-radius: 5px;
    
 }
@@ -64,28 +64,38 @@ header{
 
 nav {
     grid-area: nav;
-    background-color: var(--mycolor);
     border: 1px solid var(--platinum);
     border-radius: 5px;
     padding: 1%; /* Adjust this value as needed */
     padding-left: 10%;
     padding-right: 10%;
+
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+
+
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    
     padding: 0;
     margin: 0;
 }
 
 nav li {
     padding: 0;
-    margin: 0 10px; /* Adjust this value as needed */
 }
+
+
+
+
+
+
+
+  
 
 nav a {
     text-decoration: none;
