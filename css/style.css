@@ -17,7 +17,7 @@
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 0.1fr 0.1fr 1.5fr 0.5fr;
+    grid-template-rows: 0.25fr 0.1fr 0.1fr 1.5fr 0.5fr;
     grid-template-areas: 
     "headspace0 headspace0 headspace0 headspace0"
     "headspace1 header header headspace2"
@@ -105,26 +105,6 @@ nav ul li a.active-page
     color: black;
 }
 
-#nav-toggle {
-    display: none;
-}
-
-#nav-toggle:checked + label + nav {
-    display: block;
-}
-
-@media (min-width: 600px) {
-    #nav-toggle + label {
-        display: none;
-    }
-    nav {
-        display: block;
-    }
-    nav li {
-        display: inline-block;
-        margin: 0 10px;
-    }
-}
 
 
 #frontpageBar {
@@ -241,4 +221,3 @@ h1,h2,h3,h4,h5{
 
 
 
-/* animation stuff  */
