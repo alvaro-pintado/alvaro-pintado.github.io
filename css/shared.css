@@ -5,7 +5,7 @@
 :root {
 
     /*--space:  rgb(241, 244, 245); */
-    --mycolor: #FDFCF9;
+    --mycolor: 238, 240, 242;
     --space: white;;
     --platinum: rgb(208, 217, 220);
     --pgray: rgb(71, 104, 127);
@@ -79,11 +79,11 @@ nav {
 
 nav ul {
     list-style: none;
-    display: flex;
     padding: 0;
     margin: 0;
 
-    justify-content: space-between; /* Equal spacing between items */
+    display: flex;
+    justify-content: space-evenly; /* Equal spacing between items */
 
 }
 
