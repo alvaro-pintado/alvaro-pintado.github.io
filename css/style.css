@@ -76,9 +76,9 @@ nav {
     grid-area: nav;
     border: 1px solid var(--platinum);
     border-radius: 5px;
-    padding: 10px; /* Adjust this value as needed */
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 1%; /* Adjust this value as needed */
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 nav ul {
