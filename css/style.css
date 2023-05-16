@@ -3,7 +3,9 @@
 
 
 :root {
-    --space: #f2f3f3;
+
+    /*--space: #f2f3f3;*/
+    --space: #f2f3f3;;
     --platinum: rgb(208, 217, 220);
     --pgray: rgb(71, 104, 127);
 }
@@ -15,7 +17,7 @@
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 0.1fr 0.1fr 1.5fr 0.5fr;
+    grid-template-rows: 0.5fr 0.1fr 0.1fr 1.5fr 0.5fr;
     grid-template-areas: 
     "headspace0 headspace0 headspace0 headspace0"
     "headspace1 header header headspace2"
@@ -142,6 +144,10 @@ main{
 
 /* These are the surrounding blank areas. */
 
+#headspace0{
+    grid-area: headspace0;
+    background-color: var(--space);
+}
 
 #headspace1{
     grid-area: headspace1;
