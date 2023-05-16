@@ -37,12 +37,11 @@ main {
 #headshot {
     grid-column: 1;
     grid-row: 1;
-    display: flex;
-    object-fit: contain;  /* Make sure the image maintains its aspect ratio */
-    height: 100%;  /* Or set to a specific height */
-    width: 100%;  /* Or set to a specific width */
-
+    height: 50%;  /* Or set to a specific height */
+    width: 50%;  /* Or set to a specific width */
     border-radius: 5px;
+    border: 2.5px solid var(--platinum); 
+
 }
 
 #bio {
@@ -55,7 +54,6 @@ main {
 
 
 body {
-    font-weight: bold;
 
   }
 
