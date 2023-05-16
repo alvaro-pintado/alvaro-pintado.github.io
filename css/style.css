@@ -11,7 +11,7 @@
 }
 
 
-
+/* CSS Grid Layout, use browser dev tools to view partitions*/
 .container{
     font-family:  Spectral ;
     display: grid;
@@ -47,8 +47,11 @@ main {
 #bio {
     grid-column: 2;
     grid-row: 1;
-    width: 110%;  /* Adjust this value as needed */
     margin: 0%;    
+}
+
+#bio p {
+    margin: 5% 5% 5% 10%; /* top right bottom left */
 }
 
 .icons {
@@ -60,7 +63,7 @@ main {
     display: flex;
     align-items: center;
     margin: 10% 10% 10% 10%; 
-    font-size: 100%; /* Adjust font size as needed */
+    font-size: 110%; /* Adjust font size as needed */
   }
   
 
