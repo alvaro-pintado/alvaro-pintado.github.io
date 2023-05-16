@@ -70,10 +70,9 @@ nav {
     padding-left: 10%;
     padding-right: 10%;
 
-        
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    
+    display: grid;
+    align-items: center;
 
 
 }
@@ -83,8 +82,9 @@ nav ul {
     padding: 0;
     margin: 0;
 
-    display: flex;
-    justify-content: space-evenly; /* Equal spacing between items */
+    display: grid;
+    grid-auto-flow: column; /* Arrange items in a horizontal line */
+    gap: 20%; /* Adjust this value as needed for desired spacing */
 
 }
 
