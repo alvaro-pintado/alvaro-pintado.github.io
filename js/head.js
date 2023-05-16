@@ -1,7 +1,7 @@
 document.write(`
 <meta charset="utf-8">
 <title>Alvaro Pintado</title>
-<link rel="stylesheet" href = "/css/style.css">
+<link rel="stylesheet" href = "/css/index.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css?family=Cardo " rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css?family=Libre Baskerville" rel="stylesheet"> 

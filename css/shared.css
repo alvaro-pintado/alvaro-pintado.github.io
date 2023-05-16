@@ -1,0 +1,158 @@
+@charset "utf-8";
+
+
+
+:root {
+
+    /*--space: #f2f3f3;*/
+    --mycolor: rgb(241, 244, 245);
+    --space: white;;
+    --platinum: rgb(208, 217, 220);
+    --pgray: rgb(71, 104, 127);
+}
+
+body {
+    background-color: var(--space);
+}
+
+a:link{
+    color: rgb(71, 104, 127);
+
+}
+
+
+/* CSS Grid Layout, use browser dev tools to view partitions*/
+.container{
+    font-family:  Spectral ;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.75fr 1fr 1fr 0.75fr;
+    grid-template-rows: 0.25fr 0.1fr 0.1fr 0.75fr 0.5fr;
+    grid-template-areas: 
+    "headspace0 headspace0 headspace0 headspace0"
+    "headspace1 header header headspace2"
+    "navspace1 nav nav navspace2"
+    "space1 main main space2"
+    "footer footer footer footer";
+
+}
+
+
+header{
+    background-color: var(--mycolor);
+    font-family: Libre Baskerville;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0%;
+    margin-bottom: 1%;
+    font-size: 1.5em;
+    grid-area: header;
+    border: 2.5px solid var(--platinum); 
+    border-radius: 5px;
+   
+}
+
+
+
+
+
+
+/* ------------------------------------ */
+
+/* nav stuff */
+
+
+nav {
+    grid-area: nav;
+    background-color: var(--mycolor);
+    border: 1px solid var(--platinum);
+    border-radius: 5px;
+    padding: 1%; /* Adjust this value as needed */
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    padding: 0;
+    margin: 0 10px; /* Adjust this value as needed */
+}
+
+nav a {
+    text-decoration: none;
+  }
+
+
+nav a:link{
+    color: var(--pgray);
+}
+
+/* There is an attribute (?) in each page that sets it to be the active page. */
+nav ul li a.active-page
+{
+    /*  border: 1px solid black;
+    border-style: solid;
+    border-radius: 4px;  */
+    color: black;
+    text-decoration: underline;
+}
+
+
+
+/* ------------------------------------ */
+
+
+
+
+
+
+
+
+/* These are the surrounding blank areas. */
+
+#headspace0{
+    grid-area: headspace0;
+    background-color: var(--space);
+}
+
+#headspace1{
+    grid-area: headspace1;
+    background-color: var(--space);
+}
+#headspace2{
+    grid-area: headspace2;
+    background-color: var(--space);
+}
+
+#navspace1{
+    background-color: var(--space);
+    grid-area: navspace1;
+}
+#navspace2{
+    background-color: var(--space);
+    grid-area: navspace2;
+}
+#space1{
+    background-color: var(--space);
+    grid-area: space1;
+}
+#space2{
+    background-color: var(--space);
+    grid-area: space2;
+}
+
+footer{
+    background-color: var(--space);
+    grid-area: footer;
+    text-align: center;
+}
+
+
+/* These are the surrounding blank areas. */

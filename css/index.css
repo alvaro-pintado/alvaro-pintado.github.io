@@ -1,0 +1,105 @@
+@import "/css/shared.css"; 
+
+
+
+main{
+    grid-area: main;
+    background-color: var(--mycolor);
+    margin-top: 1%;
+    border: 2.5px solid var(--platinum);
+    border-radius: 5px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Adjust as needed */
+    grid-template-rows: 1fr; /* Adjust as needed */
+
+}
+
+main::after {
+    content: "";
+    display: block;
+    width: 1px;
+    background-color: var(--platinum);
+    grid-column: 2 / 3; /* Adjusted to span from column 2 to column 3 */
+    grid-row: 1;
+  }
+  
+  
+
+
+#headshot {
+    grid-column: 1;
+    grid-row: 1;
+    border-radius: 1%;
+    border: 10% solid var(--platinum); 
+    
+    width: 90%;
+    margin-top: 25%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+#bio {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0%;    
+    margin-top: 20%;
+}
+
+#bio p {
+    margin: 5% 5% 5% 10%; /* top right bottom left */
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+  }
+  
+.icons a {
+    display: flex;
+    align-items: center;
+    margin: 5% 5% 5% 5%; 
+    font-size: 125%; /* Adjust font size as needed */
+    color: black;
+    text-decoration: none;
+  }
+  
+
+
+
+
+.center, p{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+h1,h2,h3,h4,h5{
+    text-align: center;
+}
+
+.post-preview{
+    text-align: center;
+    margin: 0%;
+    padding: 0%;
+    line-height: 1px;
+}
+
+.post-preview a:link{
+    color: black
+}
+
+.post{
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+
