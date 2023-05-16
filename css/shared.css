@@ -4,15 +4,15 @@
 
 :root {
 
-    /*--space: #f2f3f3;*/
-    --mycolor: rgb(241, 244, 245);
+    /*--space:  rgb(241, 244, 245); */
+    --mycolor: #FDFCF9;
     --space: white;;
     --platinum: rgb(208, 217, 220);
     --pgray: rgb(71, 104, 127);
 }
 
 body {
-    background-color: var(--space);
+    background-color: var(--mycolor);
 }
 
 a:link{
