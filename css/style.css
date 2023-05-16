@@ -15,6 +15,11 @@ body {
     background-color: var(--space);
 }
 
+a:link{
+    color: rgb(71, 104, 127);
+
+}
+
 
 /* CSS Grid Layout, use browser dev tools to view partitions*/
 .container{
@@ -93,7 +98,9 @@ main::after {
     display: flex;
     align-items: center;
     margin: 5% 5% 5% 5%; 
-    font-size: 110%; /* Adjust font size as needed */
+    font-size: 125%; /* Adjust font size as needed */
+    color: black;
+    text-decoration: none;
   }
   
 
@@ -218,10 +225,7 @@ footer{
 /* These are the surrounding blank areas. */
 
 
-a:link{
-    color: rgb(71, 104, 127);
 
-}
 .center, p{
     display: block;
     margin-left: auto;

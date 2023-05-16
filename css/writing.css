@@ -88,6 +88,8 @@ nav li {
 
 nav a:link{
     color: var(--pgray);
+    text-decoration: none;
+
 }
 
 /* There is an attribute (?) in each page that sets it to be the active page. */
