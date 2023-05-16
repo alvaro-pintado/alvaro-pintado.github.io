@@ -27,45 +27,24 @@
 
 }
 
-main p {
-    justify-content: center;
-}
-
-#headshot {
-    grid-column: 1;
-    grid-row: 1;
-    border-radius: 1%;
-    border: 2.5px solid var(--platinum); 
-    margin: 2.5% 5% 10% 2.5%;
+main{
+    grid-area: main;
+    margin-top: 1%;
+    border: 1px solid var(--platinum);
+    border-radius: 5px;
 }
 
 
 
-#bio {
-    grid-column: 2;
-    grid-row: 1;
-    margin: 0%;    
+
+h4{
+    color: var(--pgray);
 }
 
-#bio p {
-    margin: 5% 5% 5% 10%; /* top right bottom left */
-}
 
-.icons {
-    display: flex;
-    justify-content: center;
-  }
-  
-.icons a {
-    display: flex;
-    align-items: center;
-    margin: 10% 10% 10% 10%; 
-    font-size: 110%; /* Adjust font size as needed */
-  }
-  
 
 body {
-
+    background-color: var(--space);
   }
 
 header{
@@ -129,12 +108,6 @@ nav ul li a.active-page
 }
 
 
-main{
-    grid-area: main;
-    margin-top: 1%;
-    border: 1px solid var(--platinum);
-    border-radius: 5px;
-}
 
 /* These are the surrounding blank areas. */
 

@@ -10,6 +10,10 @@
     --pgray: rgb(71, 104, 127);
 }
 
+body {
+    background-color: var(--space);
+}
+
 
 /* CSS Grid Layout, use browser dev tools to view partitions*/
 .container{
@@ -27,12 +31,19 @@
 
 }
 
-main {
+main{
+    grid-area: main;
+    margin-top: 1%;
+    border: 1px solid var(--platinum);
+    border-radius: 5px;
+
     display: grid;
     grid-template-columns: 1fr 1fr; /* Adjust as needed */
     grid-template-rows: 1fr; /* Adjust as needed */
 
 }
+
+
 
 #headshot {
     grid-column: 1;
@@ -67,9 +78,7 @@ main {
   }
   
 
-body {
 
-  }
 
 header{
     font-family: Libre Baskerville;
@@ -132,12 +141,7 @@ nav ul li a.active-page
 }
 
 
-main{
-    grid-area: main;
-    margin-top: 1%;
-    border: 1px solid var(--platinum);
-    border-radius: 5px;
-}
+
 
 /* These are the surrounding blank areas. */
 
