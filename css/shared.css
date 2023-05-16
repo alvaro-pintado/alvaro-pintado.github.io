@@ -4,15 +4,13 @@
 
 :root {
 
-    /*--space:  rgb(241, 244, 245); */
-    --mycolor: 238, 240, 242;
-    --space: white;;
-    --platinum: rgb(208, 217, 220);
+    --mycolor: rgb(248, 247, 241);
+    --platinum: rgb(238, 240, 242);
     --pgray: rgb(71, 104, 127);
 }
 
 body {
-    background-color: var(--mycolor);
+    background-color: white;
 }
 
 a:link{
@@ -24,6 +22,7 @@ a:link{
 /* CSS Grid Layout, use browser dev tools to view partitions*/
 .container{
     font-family:  Spectral ;
+    background-color: white;
     display: grid;
     height: 100vh;
     grid-template-columns: 0.75fr 1fr 1fr 0.75fr;
@@ -63,6 +62,7 @@ header{
 
 
 nav {
+    background-color: var(--mycolor);
     grid-area: nav;
     border: 1px solid var(--platinum);
     border-radius: 5px;
@@ -70,6 +70,7 @@ nav {
     padding-left: 10%;
     padding-right: 10%;
 
+        
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
@@ -127,37 +128,29 @@ nav ul li a.active-page
 
 #headspace0{
     grid-area: headspace0;
-    background-color: var(--space);
 }
 
 #headspace1{
     grid-area: headspace1;
-    background-color: var(--space);
 }
 #headspace2{
     grid-area: headspace2;
-    background-color: var(--space);
 }
 
 #navspace1{
-    background-color: var(--space);
     grid-area: navspace1;
 }
 #navspace2{
-    background-color: var(--space);
     grid-area: navspace2;
 }
 #space1{
-    background-color: var(--space);
     grid-area: space1;
 }
 #space2{
-    background-color: var(--space);
     grid-area: space2;
 }
 
 footer{
-    background-color: var(--space);
     grid-area: footer;
     text-align: center;
 }
