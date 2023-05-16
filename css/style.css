@@ -51,7 +51,18 @@ main {
     margin: 0%;    
 }
 
-
+.icons {
+    display: flex;
+    justify-content: center;
+  }
+  
+.icons a {
+    display: flex;
+    align-items: center;
+    margin: 10% 10% 10% 10%; 
+    font-size: 100%; /* Adjust font size as needed */
+  }
+  
 
 body {
 
