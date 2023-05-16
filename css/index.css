@@ -34,8 +34,9 @@ main::after {
     border: 10% solid var(--platinum); 
     
     width: 90%;
-    margin-top: 25%;
+    margin-top: 20%;
 
+    
     display: block;
     margin-left: auto;
     margin-right: auto;

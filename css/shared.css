@@ -16,7 +16,7 @@ body {
 }
 
 a:link{
-    color: rgb(71, 104, 127);
+    color: var(--pgray);
 
 }
 
@@ -76,6 +76,8 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    
     padding: 0;
     margin: 0;
 }
@@ -90,16 +92,10 @@ nav a {
   }
 
 
-nav a:link{
-    color: var(--pgray);
-}
-
 /* There is an attribute (?) in each page that sets it to be the active page. */
+
 nav ul li a.active-page
 {
-    /*  border: 1px solid black;
-    border-style: solid;
-    border-radius: 4px;  */
     color: black;
     text-decoration: underline;
 }
