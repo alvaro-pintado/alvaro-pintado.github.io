@@ -1,5 +1,4 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
 
 
 
@@ -9,13 +8,16 @@
     --pgray: rgb(71, 104, 127);
 }
 
+
+
 .container{
-    font-family:  Cardo ;
+    font-family:  Spectral ;
     display: grid;
     height: 100vh;
-    grid-template-columns: 0.75fr 1fr 1fr 0.75fr;
-    grid-template-rows: 0.1fr 0.1fr 1.5fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.1fr 0.1fr 1.5fr 0.5fr;
     grid-template-areas: 
+    "headspace0 headspace0 headspace0 headspace0"
     "headspace1 header header headspace2"
     "navspace1 nav nav navspace2"
     "space1 main main space2"
