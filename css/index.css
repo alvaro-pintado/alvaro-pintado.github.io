@@ -1,6 +1,21 @@
 @import "/css/shared.css"; 
 
-
+/* CSS Grid Layout, use browser dev tools to view partitions*/
+.container{
+    font-family:  Spectral ;
+    background-color: white;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.75fr 1fr 1fr 0.75fr;
+    grid-template-rows: 0.25fr 0.1fr 0.1fr 0.75fr 0.5fr 0.5fr;
+    grid-template-areas: 
+    "headspace0 headspace0 headspace0 headspace0"
+    "headspace1 header header headspace2"
+    "navspace1 nav nav navspace2"
+    "space1 main main space2"
+    "footer footer footer footer";
+    "footer2 footer2 footer2 footer2"
+}
 
 main{
     grid-area: main;
@@ -50,6 +65,7 @@ main::after {
     margin: 0%;    
     font-size: larger;
     margin-top: 10%;
+
 }
 
 #bio p {
@@ -113,4 +129,12 @@ h1,h2,h3,h4,h5{
     grid-column: 2 / 4; /* Spanning columns 2 and 3 */
     grid-row: 5; /* Placed in row 4 */
 
+    text-align: center;
+    padding: 2%; /* Adjust the padding as needed */
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+#highlights p{
+    width: 85%;
 }

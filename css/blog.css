@@ -1,119 +1,22 @@
-@charset "utf-8";
-:root {
-    --space: #f2f3f3;
+@import "/css/shared.css"; 
 
 
-}
-.container{
-    font-family:  Cardo ;
-    display: grid;
-    height: 100vh;
-    grid-template-columns: 0.75fr 1fr 1fr 0.75fr;
-    grid-template-rows: 0.1fr 0.1fr 1.5fr 1fr;
-    grid-template-areas: 
-    "headspace1 header header headspace2"
-    "navspace1 nav nav navspace2"
-    "space1 main main space2"
-    "footer footer footer footer";
 
-}
-
-
-header{
-    font-family:  Merriweather;
-    text-align: center;
-    margin-top: 0%;
-    margin-bottom: 0%;
-    font-size: 1.5em;
-    grid-area: header;
-    border-top: 1px solid #bdc1c4 ;    
-}
-
-
-nav{
-    grid-area: nav;
-    border: 1px solid #bdc1c4 ;
-    border-radius: 5px;
-}
-
-nav ul{
-    list-style: none;
-    text-align: center;
-}
-
-nav li{
-    display: inline-block;
-    margin: 10%;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
-}
-
-
-nav a:link{
-    color: #999;
-}
-
-a:visited {
-    color: lightgrey;
-  }
-
-/* There is an attribute (?) in each page that sets it to be the active page. */
-nav ul li a.active-page
-{
-    /*  border: 1px solid black;
-    border-style: solid;
-    border-radius: 4px;  */
-    color: black;
-}
 
 main{
     grid-area: main;
+    background-color: var(--mycolor);
     margin-top: 1%;
-    border: 1px solid #bdc1c4;
-    border-top: 1px solid white;
-
-}
-
-/* These are the surrounding blank areas. */
-#headspace1{
-    grid-area: headspace1;
-    background-color: var(--space);
-}
-#headspace2{
-    grid-area: headspace2;
-    background-color: var(--space);
-}
-
-#navspace1{
-    background-color: var(--space);
-    grid-area: navspace1;
-}
-#navspace2{
-    background-color: var(--space);
-    grid-area: navspace2;
-}
-#space1{
-    background-color: var(--space);
-    grid-area: space1;
-}
-#space2{
-    background-color: var(--space);
-    grid-area: space2;
-}
-
-footer{
-    background-color: var(--space);
-    grid-area: footer;
-    text-align: center;
-}
-/* These are the surrounding blank areas. */
+    border: 2.5px solid var(--platinum);
+    border-radius: 5px;
 
 
-a:link{
-    color:  #999;
-
 }
+
+
+
+
+
 .center, p{
     display: block;
     margin-left: auto;
@@ -145,14 +48,3 @@ ol{
 /* for the blog posts */
 
 
-
-@media only screen and (max-width: 1080px){
-    .container{
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.1fr 1 fr 0.1fr;
-        grid-template-areas: 
-        "nav"
-        "main"
-        "footer";
-    }
-}
