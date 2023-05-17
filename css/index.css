@@ -104,14 +104,13 @@ h1,h2,h3,h4,h5{
 }
 
 
-/*
-footer{
+
+#highlights{
+    margin-top: 1%;
     background-color: var(--mycolor);
     border: 2.5px solid var(--platinum);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Adjust as needed 
-    grid-template-rows: 1fr; /* Adjust as needed 
-
+    border-radius: 5px;
+    grid-column: 2 / 4; /* Spanning columns 2 and 3 */
+    grid-row: 5; /* Placed in row 4 */
 
 }
-*/
