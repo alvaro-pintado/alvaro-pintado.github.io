@@ -21,7 +21,7 @@ a:link{
 
 /* CSS Grid Layout, use browser dev tools to view partitions*/
 .container{
-    font-family:  Spectral ;
+    font-family:  "Spectral", 'Times New Roman', Times, serif;
     background-color: white;
     display: grid;
     height: 100vh;
