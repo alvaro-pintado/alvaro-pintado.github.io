@@ -3,7 +3,7 @@
 
 
 <head>
-    <script src="js/writingHead.js"></script>
+    <script src="js/writingHead.js"></script> <!-- External JS for Navbar -->
 </head>  
 
         
@@ -25,6 +25,33 @@
     <nav id="navbar">
     </nav>
     <script src="js/navbar.js"></script>
+
+    <!-- Inline JavaScript for Active Page Highlighting -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Get the current URL
+                var url = window.location.pathname;
+                
+                // Function to set 'active' class to the navigation item
+                function setActive(id) {
+                    var element = document.getElementById(id);
+                    if (element) {
+                        element.classList.add("active");
+                    }
+                }
+                
+                // Check the URL and set the active class on the corresponding navigation item
+                if (url.includes("index.html")) {
+                    setActive("home");
+                } else if (url.includes("papers.html")) {
+                    setActive("papers");
+                } else if (url.includes("AlvaroPintado_CV.pdf")) {
+                    setActive("cv");
+                } else if (url.includes("Expository Writing.html")) {
+                    setActive("expository");
+                }
+            });
+        </script>
 
     <div id="navspace2"></div>
 
