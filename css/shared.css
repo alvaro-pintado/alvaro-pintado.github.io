@@ -157,3 +157,17 @@ footer{
 
 
 /* These are the surrounding blank areas. */
+
+
+
+/* About Me list spacing */
+
+.custom-list {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Apply styles to list items within the specific list */
+  .custom-list li {
+    margin-bottom: 10px; /* Adjust the spacing as needed */
+  }
