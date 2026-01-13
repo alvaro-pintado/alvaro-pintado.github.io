@@ -13,8 +13,10 @@
     "headspace1 header header headspace2"
     "navspace1 nav nav navspace2"
     "space1 main main space2"
-    "footer footer footer footer";
-    "footer2 footer2 footer2 footer2"
+    ".          highlights highlights ."
+    ".          stuff     stuff     ."
+    "footer footer footer footer"
+    "footer2 footer2 footer2 footer2";
 }
 
 main{
@@ -119,6 +121,34 @@ h1,h2,h3,h4,h5{
     width: 50%;
 }
 
+#stuff{
+    margin-top: 1%;
+    background-color: var(--mycolor);
+    border: 2.5px solid var(--platinum);
+    border-radius: 5px;
+    grid-column: 2 / 4; /* Spanning columns 2 and 3 */
+    grid-row: 6; /* Placed in row 4 */
+
+    text-align: center;
+    padding: 2%; /* Adjust the padding as needed */
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+#stuff p{
+    width: 85%;
+}
+
+
+/* Override global header centering inside #highlights */
+#highlights h1,
+#highlights h2,
+#highlights h3,
+#highlights h4,
+#highlights h5{
+  text-align: left;
+  margin-left: 2%;
+}
 
 
 #highlights{
@@ -126,10 +156,10 @@ h1,h2,h3,h4,h5{
     background-color: var(--mycolor);
     border: 2.5px solid var(--platinum);
     border-radius: 5px;
-    grid-column: 2 / 4; /* Spanning columns 2 and 3 */
-    grid-row: 5; /* Placed in row 4 */
+    grid-column: 2 / 4;
+    grid-row: 5;  
 
-    text-align: center;
+    text-align: left;
     padding: 2%; /* Adjust the padding as needed */
     padding-left: 0%;
     padding-right: 0%;
