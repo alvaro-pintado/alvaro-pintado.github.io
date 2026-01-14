@@ -164,9 +164,9 @@ h1,h2,h3,h4,h5{
 }
 
 
-
 /* Small screens: stack everything */
 @media (max-width: 900px){
+
   .container{
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -184,18 +184,34 @@ h1,h2,h3,h4,h5{
       "stuff"
       "footer"
       "footer2";
-    height: auto;         /* don’t lock the whole page to 100vh */
-    min-height: 100dvh;   /* better on mobile than 100vh */
+    height: auto;
+    min-height: 100dvh;
     gap: 12px;
+  }
+
+  /* remove global “p is 75% wide and centered” behavior on mobile */
+  p{
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   main{
     grid-template-columns: 1fr; /* headshot above bio */
     grid-template-rows: auto;
+    padding: 0 16px;            /* mobile gutter */
+    box-sizing: border-box;
   }
 
   main::after{
     display: none; /* remove the vertical divider line */
+  }
+
+  #headshot{
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 0 auto;             /* keep it centered */
   }
 
   #bio{
@@ -204,36 +220,12 @@ h1,h2,h3,h4,h5{
   }
 
   #bio p{
-    margin: 12px 16px;
+    margin: 12px 0;             /* no extra side whitespace */
   }
 
   #highlights, #stuff{
     grid-column: 1;
     padding: 16px;
-  }
-
-  /* undo the global “p is 75% wide and centered” rule */
-  p{
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  /* keep a controlled, small gutter instead of huge whitespace */
-  main{
-    padding: 0 16px;
     box-sizing: border-box;
-  }
-
-  /* replace percent-based margins (too big on phones) with fixed ones */
-  #bio p{
-    margin: 12px 0;
-  }
-
-  /* optional: make the image use the available width nicely */
-  #headshot{
-    width: 100%;
-    max-width: 420px;
-    height: auto;
   }
 }
