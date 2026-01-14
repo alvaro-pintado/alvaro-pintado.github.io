@@ -44,20 +44,14 @@ main::after {
   
 
 
-#headshot {
-    grid-column: 1;
-    grid-row: 1;
-    border-radius: 1%;
-    border: 10% solid var(--platinum); 
-    
-    width: 90%;
-    margin-top: 20%;
-
-    
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+#headshot{
+  width: min(90%, 380px);   /* caps it so it doesn’t get huge on desktop */
+  height: auto;             /* preserves aspect ratio */
+  margin: 0 auto;
+  margin-top: 25%;
+  display: block;
 }
+
 
 
 
@@ -167,4 +161,54 @@ h1,h2,h3,h4,h5{
 
 #highlights p{
     width: 85%;
+}
+
+
+
+/* Small screens: stack everything */
+@media (max-width: 900px){
+  .container{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "headspace0"
+      "headspace1"
+      "header"
+      "headspace2"
+      "navspace1"
+      "nav"
+      "navspace2"
+      "space1"
+      "main"
+      "highlights"
+      "stuff"
+      "footer"
+      "footer2";
+    height: auto;         /* don’t lock the whole page to 100vh */
+    min-height: 100dvh;   /* better on mobile than 100vh */
+    gap: 12px;
+  }
+
+  main{
+    grid-template-columns: 1fr; /* headshot above bio */
+    grid-template-rows: auto;
+  }
+
+  main::after{
+    display: none; /* remove the vertical divider line */
+  }
+
+  #bio{
+    margin-top: 0;
+    font-size: 1rem;
+  }
+
+  #bio p{
+    margin: 12px 16px;
+  }
+
+  #highlights, #stuff{
+    grid-column: 1;
+    padding: 16px;
+  }
 }
