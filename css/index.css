@@ -179,7 +179,7 @@ h1,h2,h3,h4,h5{
       "nav"
       "navspace2"
       "space1"
-      "main main"
+      "main"
       "highlights"
       "stuff"
       "footer"
@@ -210,5 +210,30 @@ h1,h2,h3,h4,h5{
   #highlights, #stuff{
     grid-column: 1;
     padding: 16px;
+  }
+
+  /* undo the global “p is 75% wide and centered” rule */
+  p{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* keep a controlled, small gutter instead of huge whitespace */
+  main{
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  /* replace percent-based margins (too big on phones) with fixed ones */
+  #bio p{
+    margin: 12px 0;
+  }
+
+  /* optional: make the image use the available width nicely */
+  #headshot{
+    width: 100%;
+    max-width: 420px;
+    height: auto;
   }
 }
