@@ -1,0 +1,10 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Research and Writing"
+    url: /research-writing/
+  - title: "Teaching"
+    url: /teaching/
+  - title: "Blog"
+    url: /_posts/
+

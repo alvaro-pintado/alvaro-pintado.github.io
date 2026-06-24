@@ -1,0 +1,158 @@
+---
+---
+
+/* Whiteglass variables: set before import */
+$background-color: #ffffff;
+$text-color: hsl(240, 7%, 22%);
+$brand-color: #31547a;
+$grey-color: #757575;
+$content-width: 860px;
+
+@import "whiteglass";
+
+
+
+
+/* Center the site title and navigation */
+.site-header .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Remove Whiteglass/Minima-style left/right floating */
+.site-title {
+  float: none;
+  margin-right: 0;
+  text-align: center;
+}
+
+.site-nav {
+  float: none;
+  position: static;
+  line-height: normal;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Center the links as a horizontal toolbar */
+.site-nav .trigger {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.site-nav .page-link {
+  margin-left: 0;
+  color: #57606a;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0.15rem;
+}
+
+.site-nav .page-link:hover {
+  color: #31547a;
+  border-bottom-color: #d8dee4;
+  text-decoration: none;
+}
+
+
+
+
+
+
+/* Page background: clean white */
+body {
+  background: #ffffff;
+  color: #34343c;
+}
+
+/* Top header/navigation */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* Main content panel: cool off-white */
+.page-content .wrapper {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 2.25rem;
+  box-shadow: 0 1px 3px rgba(30, 35, 40, 0.035);
+}
+
+.headshot-right {
+  float: right;
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0 0 1rem 2rem;
+  border: 1px solid #edf0f2;
+}
+
+
+
+
+
+
+.research-project {
+  background: #f6f8fa;
+  border: 1px solid #edf0f2;
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+  margin: 1rem 0;
+}
+
+/* Remove the old line-only structure if you added it earlier */
+.research-project:last-child {
+  border-bottom: 1px solid #edf0f2;
+}
+
+.research-project summary {
+  cursor: pointer;
+  color: #34343c;
+  font-weight: 600;
+  list-style-position: outside;
+}
+
+.research-project summary:hover {
+  color: #31547a;
+}
+
+.research-project p,
+.research-project ul,
+.research-project ol {
+  margin-top: 0.75rem;
+  margin-left: 1.35rem;
+  color: #57606a;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+  .headshot-right {
+    float: none;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+  }
+}
+
