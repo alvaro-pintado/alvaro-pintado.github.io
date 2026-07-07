@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Teaching and Mentorship
+title: Teaching
 ---
 
 I enjoy teaching and take it seriously. I view teaching as an important responsibility of academics, maybe more important than our research output. I also view teaching as an essential way that I interact with ideas in math.
