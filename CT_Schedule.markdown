@@ -27,3 +27,6 @@ title: Category Theory Reading Group Meeting Agenda
     - thm. equiv iff fully, faithful, and eso
 - 1.6: Art of Diagram Chase
 - 1.7: The 2-Category of Categories
+
+
+### Meeting 3: 2.1, 2.2
