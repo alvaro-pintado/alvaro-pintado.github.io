@@ -45,6 +45,13 @@ Ex. Find an interesting natural transformation
 
 ### Meeting 3: 2.1, 2.2
 
+- 2.1: Representables
+    - structuralism perspective
+    - e.g. $id_{\mathrm{Set}}$, forget functor on Mon, powerset functor, 
+- 2.2 
+
+
+Ex. Find an interesting application of the Yoneda Lemma
 
 ### Meeting 4: 2.3, 2.4
 
