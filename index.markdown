@@ -18,10 +18,10 @@ My research interests are broadly in proof theory. Some specific topics I am int
 
 - ordinal analysis: $\Pi^1_2$-logic / $\beta$-logic
 - non-wellfounded and cyclic proof theory
-- type theory: W-types, inductive-recursive types
 - categorical perspectives on induction and recursion 
+- type theory: W-types, inductive-recursive types
 
-See my research page for more details.
+See my [Research](./research-writing) page for things I am actively thinkng about.
 
 <br>
 <br>
@@ -42,6 +42,6 @@ Outside my research, I enjoy functional programming, programming language theory
 ### News
 
 - I will be in Oberwolfach, Germany in November for the  Mathematical Logic: Proof Theory, Constructive Mathematics workshop.
-- I attended the Proof Society 2026 School and Workshop in Aussois, France. 
+- I attended the [Proof Society 2026 School and Workshop](https://proofsociety26.sciencesconf.org/) in Aussois, France. 
 - I was on a graduate student panel for the [2026 UP GRADe Workshop](https://sites.google.com/view/upgrade-workshop/home) and gave a short talk on co-induction.
 - I was a recepient of the [2026 Dean's Award for Distinguished Teaching by Graduate Students](https://www.college.upenn.edu/news/2026-teaching-awards).

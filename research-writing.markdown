@@ -7,6 +7,8 @@ permalink: /research-writing/
 
 My current research interests are in ordinal analysis and non-wellfounded proof theory. It has been observed by a couple of proof theorists that the the notions of proof appearing in each field are closely related, and most of what I do now is try to make this observation more explicit.
 
+I am also interested in type theory, especially in relation to proof theory although I am not working on any such projects. 
+
 ### Research Projects
 
 <details class="research-project" open>
@@ -21,17 +23,11 @@ My current research interests are in ordinal analysis and non-wellfounded proof 
   <summary>Ranking Non-wellfounded Proofs by Dilators</summary>
 
   <p>
-    One such way the two notions of proofs should be related is that non-wellfounded proofs should be rankable by dilators. This has already appeared in some form in the literature but has not been broadly applied. In collaboration with X, we are working on carrying this out for many systems.
+    One such way the two notions of proofs should be related is that non-wellfounded proofs should be rankable by dilators. This has already appeared in some form in the literature but has not been broadly applied. In collaboration with a co-author, we are working on carrying this out for many systems.
   </p>
 </details>
 
-<details class="research-project">
-  <summary>Cut Elimination for Non-wellfounded Proofs</summary>
 
-  <p>
-    As an application of the observations above, the methods of cut elimination from ordinal analysis should be applicable in the non-wellfounded setting.
-  </p>
-</details>
 
 
 
