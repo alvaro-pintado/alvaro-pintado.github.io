@@ -19,13 +19,25 @@ My research interests are broadly in proof theory. Some specific topics I am int
 - ordinal analysis: $\Pi^1_2$-logic / $\beta$-logic
 - non-wellfounded and cyclic proof theory
 - categorical perspectives on induction and recursion 
-- type theory: W-types, inductive-recursive types
 
-See my [Research](./research-writing) page for things I am actively thinkng about.
+See my [Research](./research-writing) page for things I am actively thinking about.
+
+
 
 <br>
 <br>
 <br>
+
+
+
+
+
+<blockquote>
+  <p>&ldquo;Beauty is the first test: there is no permanent place in the world for ugly mathematics.&rdquo;</p>
+  <cite>&mdash; G.H. Hardy</cite>
+</blockquote>
+
+
 
 
 ### About Me
@@ -38,6 +50,8 @@ Outside my research, I enjoy functional programming, programming language theory
 
 - I got a BS in math at the University of Nevada Las Vegas (UNLV). While at UNLV, I also developed a strong interest in philosophy and sat in on numerous philosophy courses. I am interested broadly in the foundations of math and philosophical logic. 
 
+
+<br>
 
 ### News
 
